@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6a2606ef-fccb-4e35-a55b-d0e7adc61672" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bantam/lexer/Lexer.java" afterPath="$PROJECT_DIR$/src/bantam/lexer/Lexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bantam/lexer/lexer.jlex" afterPath="$PROJECT_DIR$/src/bantam/lexer/lexer.jlex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/bantam/lexer/LexerTest.java" afterPath="$PROJECT_DIR$/test/bantam/lexer/LexerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,7 +57,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lexer.jlex" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lexer.jlex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bantam/lexer/lexer.jlex">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="227">
@@ -68,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LexerTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LexerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/bantam/lexer/LexerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="260" column="16" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
+            <state relative-caret-position="285">
+              <caret line="285" column="60" selection-start-line="285" selection-start-column="60" selection-end-line="285" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -133,8 +132,8 @@
         <option value="$PROJECT_DIR$/test/bantam/ArrayExprTest.java" />
         <option value="$PROJECT_DIR$/src/bantam/Main.java" />
         <option value="$PROJECT_DIR$/src/bantam/lexer/Lexer.java" />
-        <option value="$PROJECT_DIR$/test/bantam/lexer/LexerTest.java" />
         <option value="$PROJECT_DIR$/src/bantam/lexer/lexer.jlex" />
+        <option value="$PROJECT_DIR$/test/bantam/lexer/LexerTest.java" />
       </list>
     </option>
   </component>
@@ -1007,16 +1006,17 @@
       <option name="project" value="LOCAL" />
       <updated>1487018265481</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add recognition for tabs, newlines, single and multiline comments">
+      <created>1487029625180</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1487029625180</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LexerTest - 2017.02.13 at 15h 27m 49s.xml">
-      <configuration name="LexerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LexerTest - 2017.02.13 at 15h 28m 14s.xml">
-      <configuration name="LexerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LexerTest - 2017.02.13 at 15h 28m 38s.xml">
       <configuration name="LexerTest" configurationId="JUnit" />
     </history-entry>
@@ -1039,6 +1039,12 @@
       <configuration name="LexerTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="LexerTest - 2017.02.13 at 18h 45m 49s.xml">
+      <configuration name="LexerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LexerTest - 2017.02.13 at 18h 47m 26s.xml">
+      <configuration name="LexerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LexerTest - 2017.02.13 at 18h 48m 31s.xml">
       <configuration name="LexerTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1086,7 +1092,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add tests and code for integer recognition, keywords&#10;&#10;Add space recognition to separate tokens" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tests and code for integer recognition, keywords&#10;&#10;Add space recognition to separate tokens" />
+    <MESSAGE value="Add recognition for tabs, newlines, single and multiline comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add recognition for tabs, newlines, single and multiline comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1519,18 +1526,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/bantam/lexer/LexerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="260" column="16" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/bantam/lexer/lexer.jlex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
           <caret line="203" column="18" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/bantam/lexer/LexerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="285" column="60" selection-start-line="285" selection-start-column="60" selection-end-line="285" selection-end-column="60" />
           <folding />
         </state>
       </provider>

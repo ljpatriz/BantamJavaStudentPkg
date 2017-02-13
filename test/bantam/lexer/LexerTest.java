@@ -281,8 +281,9 @@ public class LexerTest
 
     @Test
     public void returnToken() throws Exception {
-        Lexer lexer = new Lexer(new StringReader("return"));
+        Lexer lexer = new Lexer(new StringReader("/* test */ return"));
         Symbol token = lexer.next_token();
+        System.out.println(((Token)token.value).getLexeme());
         String name = ((Token)token.value).getName();
         assertEquals("RETURN",name);
     }
