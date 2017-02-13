@@ -197,7 +197,7 @@ import java_cup.runtime.Symbol;
 %char
 
 %%
-
+<YYINITIAL>" "  {}
 <YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
 						    new Token("CLASS", yyline)); }
 
@@ -283,6 +283,53 @@ import java_cup.runtime.Symbol;
                                                                new Token("STRING_CONST",
                                                                yytext().substring(1,yytext().length()-1)
                                                                , yyline));}
+
+<YYINITIAL>for          { return new Symbol(TokenIds.FOR,
+                            new Token("FOR", yyline)); }
+<YYINITIAL>instanceof   { return new Symbol(TokenIds.INSTANCEOF,
+                            new Token("INSTANCEOF", yyline)); }
+<YYINITIAL>if           { return new Symbol(TokenIds.IF,
+                            new Token("IF", yyline)); }
+<YYINITIAL>return       { return new Symbol(TokenIds.RETURN,
+                            new Token("RETURN", yyline)); }
+<YYINITIAL>new          { return new Symbol(TokenIds.NEW,
+                            new Token("NEW", yyline)); }
+<YYINITIAL>break        { return new Symbol(TokenIds.BREAK,
+                            new Token("BREAK", yyline)); }
+<YYINITIAL>else         { return new Symbol(TokenIds.ELSE,
+                            new Token("ELSE", yyline)); }
+<YYINITIAL>while        { return new Symbol(TokenIds.WHILE,
+                            new Token("WHILE", yyline)); }
+<YYINITIAL>extends      { return new Symbol(TokenIds.EXTENDS,
+                            new Token("EXTENDS", yyline)); }
+
+<YYINITIAL>0*214748364[8-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*21474836[5-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*2147483[7-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                    ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*214748[4-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                        ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*214749[0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                        ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*2147[5-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                                ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*214[8-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                                   ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*21[5-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                                        ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*2[2-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                                            ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*[3-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+ { return new Symbol(TokenIds.LEX_ERROR, new Token
+                                                                 ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+<YYINITIAL>0*[0-1]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?
+                            { return new Symbol(TokenIds.INT_CONST,
+                                new Token("INT_CONST", yytext(), yyline)); }
+<YYINITIAL>0*[2]?[01]?[0-4]?[0-7]?[0-4]?[0-8]?[0-3]?[0-6]?[0-4]?[0-7]?
+                            { return new Symbol(TokenIds.INT_CONST,
+                                new Token("INT_CONST", yytext(), yyline)); }
+
 
 <YYINITIAL>[a-zA-Z][a-zA-Z1-9_]*    { return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
