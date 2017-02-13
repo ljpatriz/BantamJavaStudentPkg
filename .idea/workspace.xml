@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bantam/lexer/Lexer.java" afterPath="$PROJECT_DIR$/src/bantam/lexer/Lexer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bantam/lexer/lexer.jlex" afterPath="$PROJECT_DIR$/src/bantam/lexer/lexer.jlex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/bantam/lexer/LexerTest.java" afterPath="$PROJECT_DIR$/test/bantam/lexer/LexerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,81 +22,63 @@
     <favorites_list name="BantamJavaStudentPkg" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="TokenIds.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bantam/parser/TokenIds.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="646">
-                  <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#0#1946#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Lexer.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bantam/lexer/Lexer.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="173">
-                  <caret line="958" column="0" selection-start-line="958" selection-start-column="0" selection-end-line="958" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#0#53900#0" expanded="true" />
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#4307#4308#0" expanded="true" />
-                    <element signature="e#4329#4330#0" expanded="true" />
-                    <element signature="e#4476#4477#0" expanded="true" />
-                    <element signature="e#4510#4511#0" expanded="true" />
-                    <element signature="e#6925#6926#0" expanded="true" />
-                    <element signature="e#6956#6957#0" expanded="true" />
-                    <element signature="e#8681#8682#0" expanded="true" />
-                    <element signature="e#8719#8720#0" expanded="true" />
-                    <element signature="e#9229#9230#0" expanded="true" />
-                    <element signature="e#9274#9275#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="lexer.jlex" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/bantam/lexer/lexer.jlex">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="987">
-                  <caret line="244" column="0" selection-start-line="336" selection-start-column="0" selection-end-line="337" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="LexerTest.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/test/bantam/lexer/LexerTest.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="222">
-                  <caret line="331" column="56" selection-start-line="331" selection-start-column="56" selection-end-line="331" selection-end-column="56" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="lexer.jlex" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/bantam/lexer/lexer.jlex">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="157">
-                  <caret line="199" column="18" selection-start-line="199" selection-start-column="18" selection-end-line="199" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TokenIds.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bantam/parser/TokenIds.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#1946#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Lexer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/bantam/lexer/Lexer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15755">
+              <caret line="964" column="0" selection-start-line="964" selection-start-column="0" selection-end-line="964" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#54917#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#4307#4308#0" expanded="true" />
+                <element signature="e#4329#4330#0" expanded="true" />
+                <element signature="e#4476#4477#0" expanded="true" />
+                <element signature="e#4510#4511#0" expanded="true" />
+                <element signature="e#6925#6926#0" expanded="true" />
+                <element signature="e#6956#6957#0" expanded="true" />
+                <element signature="e#8681#8682#0" expanded="true" />
+                <element signature="e#8719#8720#0" expanded="true" />
+                <element signature="e#9229#9230#0" expanded="true" />
+                <element signature="e#9274#9275#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lexer.jlex" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/bantam/lexer/lexer.jlex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="203" column="18" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LexerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/bantam/lexer/LexerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="488">
+              <caret line="260" column="16" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -158,10 +139,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="x" value="-8" />
+    <option name="width" value="976" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -195,6 +175,90 @@
               <option name="myItemId" value="BantamJavaStudentPkg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BantamJavaStudentPkg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BantamJavaStudentPkg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BantamJavaStudentPkg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BantamJavaStudentPkg" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -282,43 +346,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BantamJavaStudentPkg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BantamJavaStudentPkg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bantam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="lexer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BantamJavaStudentPkg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BantamJavaStudentPkg" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -972,12 +1000,17 @@
       <option name="presentableId" value="Default" />
       <updated>1486588356813</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add tests and code for integer recognition, keywords&#10;&#10;Add space recognition to separate tokens">
+      <created>1487018265481</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1487018265481</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LexerTest - 2017.02.13 at 15h 25m 04s.xml">
-      <configuration name="LexerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LexerTest - 2017.02.13 at 15h 27m 49s.xml">
       <configuration name="LexerTest" configurationId="JUnit" />
     </history-entry>
@@ -1005,9 +1038,12 @@
     <history-entry file="LexerTest - 2017.02.13 at 15h 34m 59s.xml">
       <configuration name="LexerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="LexerTest - 2017.02.13 at 18h 45m 49s.xml">
+      <configuration name="LexerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-8" y="0" width="976" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1017,14 +1053,15 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37870473" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37846836" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32601535" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907662" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10520833" sideWeight="0.60954064" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10520833" sideWeight="0.39045936" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1421875" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13152401" sideWeight="0.60954064" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3318535" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10520833" sideWeight="0.39045936" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28496867" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -1034,7 +1071,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Memory View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32907662" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1047,6 +1083,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add tests and code for integer recognition, keywords&#10;&#10;Add space recognition to separate tokens" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests and code for integer recognition, keywords&#10;&#10;Add space recognition to separate tokens" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1175,7 +1215,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#53900#0" expanded="true" />
+            <element signature="e#0#54917#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#4307#4308#0" expanded="true" />
             <element signature="e#4329#4330#0" expanded="true" />
@@ -1222,7 +1262,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#53900#0" expanded="true" />
+            <element signature="e#0#54917#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#4307#4308#0" expanded="true" />
             <element signature="e#4329#4330#0" expanded="true" />
@@ -1269,7 +1309,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#53900#0" expanded="true" />
+            <element signature="e#0#54917#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#4307#4308#0" expanded="true" />
             <element signature="e#4329#4330#0" expanded="true" />
@@ -1316,7 +1356,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#53900#0" expanded="true" />
+            <element signature="e#0#54917#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#4307#4308#0" expanded="true" />
             <element signature="e#4329#4330#0" expanded="true" />
@@ -1352,7 +1392,7 @@
         <state relative-caret-position="6345">
           <caret line="442" column="25" selection-start-line="442" selection-start-column="25" selection-end-line="442" selection-end-column="25" />
           <folding>
-            <element signature="e#0#53900#0" expanded="true" />
+            <element signature="e#0#54917#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#4307#4308#0" expanded="true" />
             <element signature="e#4329#4330#0" expanded="true" />
@@ -1423,12 +1463,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/CharacterDataPrivateUse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+          <folding>
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/CharacterDataLatin1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="121" column="12" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/CharacterData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="35" column="37" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/lang/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="6212" column="49" selection-start-line="6212" selection-start-column="49" selection-end-line="6212" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/bantam/lexer/Lexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="958" column="0" selection-start-line="958" selection-start-column="0" selection-end-line="958" selection-end-column="0" />
+        <state relative-caret-position="15755">
+          <caret line="964" column="0" selection-start-line="964" selection-start-column="0" selection-end-line="964" selection-end-column="0" />
           <folding>
-            <element signature="e#0#53900#0" expanded="true" />
+            <element signature="e#0#54917#0" expanded="true" />
             <element signature="imports" expanded="true" />
             <element signature="e#4307#4308#0" expanded="true" />
             <element signature="e#4329#4330#0" expanded="true" />
@@ -1446,16 +1521,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/bantam/lexer/LexerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="331" column="56" selection-start-line="331" selection-start-column="56" selection-end-line="331" selection-end-column="56" />
+        <state relative-caret-position="488">
+          <caret line="260" column="16" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bantam/lexer/lexer.jlex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="199" column="18" selection-start-line="199" selection-start-column="18" selection-end-line="199" selection-end-column="18" />
+        <state relative-caret-position="227">
+          <caret line="203" column="18" selection-start-line="203" selection-start-column="18" selection-end-line="203" selection-end-column="18" />
           <folding />
         </state>
       </provider>

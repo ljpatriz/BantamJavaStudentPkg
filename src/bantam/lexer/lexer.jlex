@@ -198,6 +198,10 @@ import java_cup.runtime.Symbol;
 
 %%
 <YYINITIAL>" "  {}
+<YYINITIAL>\t   {}
+<YYINITIAL>\n   {}
+<YYINITIAL>/"*"(.*\n)*"*"/  {}
+<YYINITIAL>//.* {}
 <YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
 						    new Token("CLASS", yyline)); }
 
