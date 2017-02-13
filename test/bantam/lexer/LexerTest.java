@@ -200,6 +200,53 @@ public class LexerTest
     }
 
     @Test
+    public void trueToken() throws Exception {
+        Lexer lexer = new Lexer(new StringReader("true"));
+        Symbol token = lexer.next_token();
+        String s = ((Token)token.value).getName();
+        assertEquals("TRUE",s);
+    }
+
+    @Test
+    public void falseToken() throws Exception {
+        Lexer lexer = new Lexer(new StringReader("false"));
+        Symbol token = lexer.next_token();
+        String s = ((Token)token.value).getName();
+        assertEquals("FALSE",s);
+    }
+
+    @Test
+    public void stringToken() throws Exception {
+        Lexer lexer = new Lexer(new StringReader("\"this is a string\""));
+        Symbol token = lexer.next_token();
+        String name = ((Token)token.value).getName();
+        String attribute = ((Token)token.value).getAttribute();
+        assertEquals("this is a string",attribute);
+        assertEquals("STRING_CONST",name);
+    }
+
+    @Test
+    public void unterminatedMultilineComment() throws Exception {
+        Lexer lexer = new Lexer(new StringReader("/*unterminated multiline comment"));
+        Symbol token = lexer.next_token();
+        String name = ((Token)token.value).getName();
+        String attribute = ((Token)token.value).getAttribute();
+        assertEquals("unterminated multiline comment",attribute);
+        assertEquals("LEX_ERROR",name);
+    }
+
+    @Test
+    public void multilineStringToken() throws Exception {
+        Lexer lexer = new Lexer(new StringReader("\"this is a multiline \n string\""));
+        Symbol token = lexer.next_token();
+        String name = ((Token)token.value).getName();
+        String attribute = ((Token)token.value).getAttribute();
+        assertEquals("LEX_ERROR",name);
+        assertEquals("String Constant spans multiple lines",attribute);
+
+    }
+
+    @Test
     public void EOFToken() throws Exception {
         Lexer lexer = new Lexer(new StringReader(""));
         Symbol token = lexer.next_token();

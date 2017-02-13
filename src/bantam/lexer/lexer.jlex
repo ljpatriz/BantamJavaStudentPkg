@@ -261,10 +261,31 @@ import java_cup.runtime.Symbol;
 <YYINITIAL>"%"            { return new Symbol(TokenIds.MODULUS,
                             new Token("MODULUS", yyline)); }
 
-
 <YYINITIAL>[?,@,#,^,`]     { return new Symbol(TokenIds.LEX_ERROR,
                              new Token("LEX_ERROR", "Unsupported Character", yyline)); }
 
+<YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
+						    new Token("CLASS", yyline)); }
+
+<YYINITIAL>true     { return new Symbol(TokenIds.BOOLEAN_CONST,
+                                               new Token("TRUE",yyline));}
+
+<YYINITIAL>false    { return new Symbol(TokenIds.BOOLEAN_CONST,
+                             new Token("FALSE",yyline));}
+
+
+<YYINITIAL>/\*[^(\*/)]* { return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
+
+<YYINITIAL>\".*\n  { return new Symbol(TokenIds.LEX_ERROR, new Token("LEX_ERROR","String Constant spans multiple lines"
+                                                                                              , yyline));}
+
+<YYINITIAL>\"(\\.|[^\"(\n)])*\"  { return new Symbol(TokenIds.STRING_CONST,
+                                                               new Token("STRING_CONST",
+                                                               yytext().substring(1,yytext().length()-1)
+                                                               , yyline));}
+
+<YYINITIAL>[a-zA-Z][a-zA-Z1-9_]*    { return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 
 
 .                      { throw new RuntimeException("Unmatched lexeme " +

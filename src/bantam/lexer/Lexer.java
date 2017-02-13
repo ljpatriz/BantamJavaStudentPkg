@@ -367,22 +367,54 @@ public class Lexer implements java_cup.runtime.Scanner {
 		/* 22 */ YY_NO_ANCHOR,
 		/* 23 */ YY_NO_ANCHOR,
 		/* 24 */ YY_NO_ANCHOR,
-		/* 25 */ YY_NOT_ACCEPT,
+		/* 25 */ YY_NO_ANCHOR,
 		/* 26 */ YY_NO_ANCHOR,
-		/* 27 */ YY_NOT_ACCEPT,
+		/* 27 */ YY_NO_ANCHOR,
 		/* 28 */ YY_NO_ANCHOR,
-		/* 29 */ YY_NOT_ACCEPT
+		/* 29 */ YY_NO_ANCHOR,
+		/* 30 */ YY_NO_ANCHOR,
+		/* 31 */ YY_NOT_ACCEPT,
+		/* 32 */ YY_NO_ANCHOR,
+		/* 33 */ YY_NO_ANCHOR,
+		/* 34 */ YY_NO_ANCHOR,
+		/* 35 */ YY_NOT_ACCEPT,
+		/* 36 */ YY_NO_ANCHOR,
+		/* 37 */ YY_NO_ANCHOR,
+		/* 38 */ YY_NO_ANCHOR,
+		/* 39 */ YY_NOT_ACCEPT,
+		/* 40 */ YY_NO_ANCHOR,
+		/* 41 */ YY_NO_ANCHOR,
+		/* 42 */ YY_NOT_ACCEPT,
+		/* 43 */ YY_NOT_ACCEPT,
+		/* 44 */ YY_NO_ANCHOR,
+		/* 45 */ YY_NO_ANCHOR,
+		/* 46 */ YY_NO_ANCHOR,
+		/* 47 */ YY_NO_ANCHOR,
+		/* 48 */ YY_NO_ANCHOR,
+		/* 49 */ YY_NO_ANCHOR,
+		/* 50 */ YY_NO_ANCHOR,
+		/* 51 */ YY_NO_ANCHOR
 	};
 	private int yy_cmap[] = unpackFromString(1,130,
-"21:10,0,21:2,0,21:19,18,21,20,21,19,21:2,7,8,11,10,20,9,21,12,21:12,16,15,1" +
-"7,20:2,21:26,13,21,14,20,21,20,3,21,1,21:8,2,21:6,4,21:7,5,21,6,21:2,22:2")[0];
+"28:10,29,28:2,26,28:19,18,27,20,28,19,28:2,7,8,11,10,20,9,28,12,28,32:9,28:" +
+"2,16,15,17,20:2,31:26,13,30,14,20,32,20,3,31,1,31,24,25,31:5,2,31:5,22,4,21" +
+",23,31:5,5,28,6,28:2,0:2")[0];
 
-	private int yy_rmap[] = unpackFromString(1,30,
-"0,1,2:4,3,4,2:4,5,6,7,2:10,8,2,9,10,11")[0];
+	private int yy_rmap[] = unpackFromString(1,52,
+"0,1,2,1:4,3,4,1,5,1:2,6,7,8,9,1:4,10,1:4,11,1,12:3,13,14,13,1,11,15,1,13,16" +
+",17,16,18,19,20,21,22,23,24,25,12,26")[0];
 
-	private int yy_nxt[][] = unpackFromString(12,23,
-"-1,1,26:3,2,3,4,5,6,7,8,9,10,11,12,13,14,28,15,16,26,17,-1:2,25,-1:52,18,-1" +
-":23,19,-1:27,20,-1:22,21,-1:22,22,-1:10,27,-1:23,29,-1:33,23,-1:11,24,-1:18");
+	private int yy_nxt[][] = unpackFromString(27,33,
+"1,2,50:3,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,47,50:3,51,-1,33,37,-1,37" +
+",50,37,-1:34,50,48,50:2,-1:16,50:5,-1:5,50:2,-1:9,19,-1:33,20,-1:33,21,-1:3" +
+"6,22,-1:32,23,-1:32,24,-1:32,25,-1:18,21:6,-1:2,21:2,-1:2,21:20,-1,35:25,-1" +
+",35:2,27,35:3,-1,50:4,-1:16,50:5,-1:5,50:2,-1,31:6,35:2,31:17,39,26,31,27,4" +
+"2,31:2,-1,50:4,-1:16,50:3,28,50,-1:5,50:2,-1,50:3,29,-1:16,50:5,-1:5,50:2,-" +
+"1,39:6,-1:2,39:18,34,39,-1,43,39:2,-1,50:4,-1:16,50:3,30,50,-1:5,50:2,-1,31" +
+":25,39,38,31,27,42,31:2,-1,39:26,41,39,-1,43,39:2,-1,50:4,-1:16,50:2,32,50:" +
+"2,-1:5,50:2,-1,50:3,36,-1:16,50:5,-1:5,50:2,-1,50:3,40,-1:16,50:5,-1:5,50:2" +
+",-1,50:4,-1:16,50,44,50:3,-1:5,50:2,-1,50:2,45,50,-1:16,50:5,-1:5,50:2,-1,5" +
+"0,46,50:2,-1:16,50:5,-1:5,50:2,-1,50:2,49,50,-1:16,50:5,-1:5,50:2");
 
 	public java_cup.runtime.Symbol next_token ()
 		throws java.io.IOException {
@@ -448,133 +480,240 @@ public class Lexer implements java_cup.runtime.Scanner {
 					yy_to_mark();
 					switch (yy_last_accept_state) {
 					case 1:
-						{ throw new RuntimeException("Unmatched lexeme " +
-                            yytext() + " at line " + yyline); }
+						
 					case -2:
 						break;
 					case 2:
-						{ return new Symbol(TokenIds.LBRACE,
-                            new Token("LBRACE", yyline)); }
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -3:
 						break;
 					case 3:
-						{ return new Symbol(TokenIds.RBRACE,
-                            new Token("RBRACE", yyline)); }
+						{ return new Symbol(TokenIds.LBRACE,
+                            new Token("LBRACE", yyline)); }
 					case -4:
 						break;
 					case 4:
-						{ return new Symbol(TokenIds.LPAREN,
-                            new Token("LPAREN", yyline)); }
+						{ return new Symbol(TokenIds.RBRACE,
+                            new Token("RBRACE", yyline)); }
 					case -5:
 						break;
 					case 5:
-						{ return new Symbol(TokenIds.RPAREN,
-                            new Token("RPAREN", yyline)); }
+						{ return new Symbol(TokenIds.LPAREN,
+                            new Token("LPAREN", yyline)); }
 					case -6:
 						break;
 					case 6:
-						{ return new Symbol(TokenIds.MINUS,
-                            new Token("MINUS", yyline)); }
+						{ return new Symbol(TokenIds.RPAREN,
+                            new Token("RPAREN", yyline)); }
 					case -7:
 						break;
 					case 7:
-						{ return new Symbol(TokenIds.PLUS,
-                            new Token("PLUS", yyline)); }
+						{ return new Symbol(TokenIds.MINUS,
+                            new Token("MINUS", yyline)); }
 					case -8:
 						break;
 					case 8:
-						{ return new Symbol(TokenIds.TIMES,
-                            new Token("TIMES", yyline)); }
+						{ return new Symbol(TokenIds.PLUS,
+                            new Token("PLUS", yyline)); }
 					case -9:
 						break;
 					case 9:
-						{ return new Symbol(TokenIds.DIVIDE,
-                            new Token("DIVIDE", yyline)); }
+						{ return new Symbol(TokenIds.TIMES,
+                            new Token("TIMES", yyline)); }
 					case -10:
 						break;
 					case 10:
-						{ return new Symbol(TokenIds.LSQBRACE,
-                            new Token("LSQBRACE", yyline)); }
+						{ return new Symbol(TokenIds.DIVIDE,
+                            new Token("DIVIDE", yyline)); }
 					case -11:
 						break;
 					case 11:
-						{ return new Symbol(TokenIds.RSQBRACE,
-                            new Token("RSQBRACE", yyline)); }
+						{ return new Symbol(TokenIds.LSQBRACE,
+                            new Token("LSQBRACE", yyline)); }
 					case -12:
 						break;
 					case 12:
-						{ return new Symbol(TokenIds.ASSIGN,
-                            new Token("ASSIGN", yyline)); }
+						{ return new Symbol(TokenIds.RSQBRACE,
+                            new Token("RSQBRACE", yyline)); }
 					case -13:
 						break;
 					case 13:
-						{ return new Symbol(TokenIds.LT,
-                            new Token("LT", yyline)); }
+						{ return new Symbol(TokenIds.ASSIGN,
+                            new Token("ASSIGN", yyline)); }
 					case -14:
 						break;
 					case 14:
-						{ return new Symbol(TokenIds.GT,
-                            new Token("GT", yyline)); }
+						{ return new Symbol(TokenIds.LT,
+                            new Token("LT", yyline)); }
 					case -15:
 						break;
 					case 15:
-						{ return new Symbol(TokenIds.MODULUS,
-                            new Token("MODULUS", yyline)); }
+						{ return new Symbol(TokenIds.GT,
+                            new Token("GT", yyline)); }
 					case -16:
 						break;
 					case 16:
-						{ return new Symbol(TokenIds.LEX_ERROR,
-                             new Token("LEX_ERROR", "Unsupported Character", yyline)); }
+						{ throw new RuntimeException("Unmatched lexeme " +
+                            yytext() + " at line " + yyline); }
 					case -17:
 						break;
 					case 17:
-						
+						{ return new Symbol(TokenIds.MODULUS,
+                            new Token("MODULUS", yyline)); }
 					case -18:
 						break;
 					case 18:
-						{ return new Symbol(TokenIds.DECR,
-                            new Token("DECR", yyline)); }
+						{ return new Symbol(TokenIds.LEX_ERROR,
+                             new Token("LEX_ERROR", "Unsupported Character", yyline)); }
 					case -19:
 						break;
 					case 19:
-						{ return new Symbol(TokenIds.INCR,
-                            new Token("INCR", yyline)); }
+						{ return new Symbol(TokenIds.DECR,
+                            new Token("DECR", yyline)); }
 					case -20:
 						break;
 					case 20:
-						{ return new Symbol(TokenIds.EQ,
-                            new Token("EQ", yyline)); }
+						{ return new Symbol(TokenIds.INCR,
+                            new Token("INCR", yyline)); }
 					case -21:
 						break;
 					case 21:
-						{ return new Symbol(TokenIds.LEQ,
-                            new Token("LEQ", yyline)); }
+						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
 					case -22:
 						break;
 					case 22:
-						{ return new Symbol(TokenIds.GEQ,
-                            new Token("GEQ", yyline)); }
+						{ return new Symbol(TokenIds.EQ,
+                            new Token("EQ", yyline)); }
 					case -23:
 						break;
 					case 23:
-						{ return new Symbol(TokenIds.NE,
-                            new Token("NE", yyline)); }
+						{ return new Symbol(TokenIds.LEQ,
+                            new Token("LEQ", yyline)); }
 					case -24:
 						break;
 					case 24:
-						{ return new Symbol(TokenIds.CLASS,
-						    new Token("CLASS", yyline)); }
+						{ return new Symbol(TokenIds.GEQ,
+                            new Token("GEQ", yyline)); }
 					case -25:
 						break;
-					case 26:
-						{ throw new RuntimeException("Unmatched lexeme " +
-                            yytext() + " at line " + yyline); }
+					case 25:
+						{ return new Symbol(TokenIds.NE,
+                            new Token("NE", yyline)); }
 					case -26:
 						break;
+					case 26:
+						{ return new Symbol(TokenIds.STRING_CONST,
+                                                               new Token("STRING_CONST",
+                                                               yytext().substring(1,yytext().length()-1)
+                                                               , yyline));}
+					case -27:
+						break;
+					case 27:
+						{ return new Symbol(TokenIds.LEX_ERROR, new Token("LEX_ERROR","String Constant spans multiple lines"
+                                                                                              , yyline));}
+					case -28:
+						break;
 					case 28:
+						{ return new Symbol(TokenIds.BOOLEAN_CONST,
+                                               new Token("TRUE",yyline));}
+					case -29:
+						break;
+					case 29:
+						{ return new Symbol(TokenIds.CLASS,
+						    new Token("CLASS", yyline)); }
+					case -30:
+						break;
+					case 30:
+						{ return new Symbol(TokenIds.BOOLEAN_CONST,
+                             new Token("FALSE",yyline));}
+					case -31:
+						break;
+					case 32:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -32:
+						break;
+					case 33:
 						{ throw new RuntimeException("Unmatched lexeme " +
                             yytext() + " at line " + yyline); }
-					case -27:
+					case -33:
+						break;
+					case 34:
+						{ return new Symbol(TokenIds.STRING_CONST,
+                                                               new Token("STRING_CONST",
+                                                               yytext().substring(1,yytext().length()-1)
+                                                               , yyline));}
+					case -34:
+						break;
+					case 36:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -35:
+						break;
+					case 37:
+						{ throw new RuntimeException("Unmatched lexeme " +
+                            yytext() + " at line " + yyline); }
+					case -36:
+						break;
+					case 38:
+						{ return new Symbol(TokenIds.STRING_CONST,
+                                                               new Token("STRING_CONST",
+                                                               yytext().substring(1,yytext().length()-1)
+                                                               , yyline));}
+					case -37:
+						break;
+					case 40:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -38:
+						break;
+					case 41:
+						{ return new Symbol(TokenIds.STRING_CONST,
+                                                               new Token("STRING_CONST",
+                                                               yytext().substring(1,yytext().length()-1)
+                                                               , yyline));}
+					case -39:
+						break;
+					case 44:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -40:
+						break;
+					case 45:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -41:
+						break;
+					case 46:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -42:
+						break;
+					case 47:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -43:
+						break;
+					case 48:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -44:
+						break;
+					case 49:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -45:
+						break;
+					case 50:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -46:
+						break;
+					case 51:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -47:
 						break;
 					default:
 						yy_error(YY_E_INTERNAL,false);
