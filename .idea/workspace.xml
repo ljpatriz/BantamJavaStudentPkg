@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6a2606ef-fccb-4e35-a55b-d0e7adc61672" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bantam/lexer/Lexer.java" afterPath="$PROJECT_DIR$/src/bantam/lexer/Lexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bantam/lexer/lexer.jlex" afterPath="$PROJECT_DIR$/src/bantam/lexer/lexer.jlex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/bantam/lexer/LexerTest.java" afterPath="$PROJECT_DIR$/test/bantam/lexer/LexerTest.java" />
-    </list>
+    <list default="true" id="6a2606ef-fccb-4e35-a55b-d0e7adc61672" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/src/bantam/lexer/Lexer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,8 +44,8 @@
       <file leaf-file-name="lexer.jlex" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bantam/lexer/lexer.jlex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="207" column="50" selection-start-line="207" selection-start-column="50" selection-end-line="207" selection-end-column="50" />
+            <state relative-caret-position="322">
+              <caret line="209" column="50" selection-start-line="209" selection-start-column="50" selection-end-line="209" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -823,6 +818,14 @@
       <option name="presentableId" value="Default" />
       <updated>1486588356813</updated>
     </task>
+    <task id="LOCAL-00001" summary="added some unsupported characters">
+      <created>1487040744968</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1487040744968</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -898,6 +901,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added some unsupported characters" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some unsupported characters" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1213,7 +1220,7 @@
     <entry file="file://$PROJECT_DIR$/src/bantam/lexer/Lexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1222,8 +1229,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bantam/lexer/lexer.jlex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="207" column="50" selection-start-line="207" selection-start-column="50" selection-end-line="207" selection-end-column="50" />
+        <state relative-caret-position="322">
+          <caret line="209" column="50" selection-start-line="209" selection-start-column="50" selection-end-line="209" selection-end-column="50" />
           <folding />
         </state>
       </provider>
