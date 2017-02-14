@@ -200,8 +200,10 @@ import java_cup.runtime.Symbol;
 <YYINITIAL>" "  {}
 <YYINITIAL>\t   {}
 <YYINITIAL>\n   {}
-<YYINITIAL>/"*"(.*\n)*"*"/  {}
+<YYINITIAL>/\*(.|\n)*[^\\]+\*/ {}
 <YYINITIAL>//.* {}
+
+
 <YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
 						    new Token("CLASS", yyline)); }
 
@@ -281,7 +283,6 @@ import java_cup.runtime.Symbol;
 
 <YYINITIAL>false    { return new Symbol(TokenIds.BOOLEAN_CONST,
                              new Token("FALSE",yyline));}
-
 
 <YYINITIAL>/\*[^(\*/)]* { return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
 
