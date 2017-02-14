@@ -190,13 +190,13 @@ public class LexerTest
 
     @Test
     public void unsupportedCharacterToken() throws Exception {
-        Lexer lexer = new Lexer(new StringReader("#"));
+        Lexer lexer = new Lexer(new StringReader("? @ # ^ ` & << >>> << += -= *= /= %="));
         Symbol token = lexer.next_token();
-        String s = ((Token)token.value).getName();
-        assertEquals("LEX_ERROR",s);
-//        token = lexer.next_token();
-//        s = ((Token)token.value).getName();
-//        assertEquals("LEX_ERROR",s);
+        while (((Token) token.value).getName() != "EOF") {
+            String name = ((Token) token.value).getName();
+            assertEquals("LEX_ERROR", name);
+            token = lexer.next_token();
+        }
     }
 
     @Test
