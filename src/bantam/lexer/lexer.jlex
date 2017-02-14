@@ -200,7 +200,7 @@ import java_cup.runtime.Symbol;
 <YYINITIAL>" "  {}
 <YYINITIAL>\t   {}
 <YYINITIAL>\n   {}
-<YYINITIAL>/\*.*\*/ {}
+<YYINITIAL>/\*(.|\n)*[^\\]+\*/ {}
 <YYINITIAL>//.* {}
 
 
