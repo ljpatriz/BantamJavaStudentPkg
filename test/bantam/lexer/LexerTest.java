@@ -247,6 +247,16 @@ public class LexerTest
     }
 
     @Test
+    public void unterminatedString() throws Exception {
+        Lexer lexer = new Lexer(new StringReader("\"kjabskfjb aksjfb akjb znn b\\\""));
+        Symbol token = lexer.next_token();
+        String name = ((Token)token.value).getName();
+        String attribute = ((Token)token.value).getAttribute();
+        assertEquals("Unterminated String Constant",attribute);
+        assertEquals("LEX_ERROR",name);
+    }
+
+    @Test
     public void multilineStringToken() throws Exception {
         Lexer lexer = new Lexer(new StringReader("\"this is a multiline \n string\""));
         Symbol token = lexer.next_token();

@@ -289,6 +289,10 @@ import java_cup.runtime.Symbol;
                                                                new Token("STRING_CONST",
                                                                yytext().substring(1,yytext().length()-1)
                                                                , yyline));}
+<YYINITIAL>\"(\\(\\\\)*\")*  {
+                            return new Symbol(TokenIds.LEX_ERROR,
+                            new Token("LEX_ERROR", "Unterminated String Constant", yyline));
+                             }
 
 <YYINITIAL>for          { return new Symbol(TokenIds.FOR,
                             new Token("FOR", yyline)); }
