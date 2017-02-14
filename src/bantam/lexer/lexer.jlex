@@ -261,8 +261,11 @@ import java_cup.runtime.Symbol;
 <YYINITIAL>"%"            { return new Symbol(TokenIds.MODULUS,
                             new Token("MODULUS", yyline)); }
 
-<YYINITIAL>[?,@,#,^,`]     { return new Symbol(TokenIds.LEX_ERROR,
+<YYINITIAL>[?,@,#,^,`,|]     { return new Symbol(TokenIds.LEX_ERROR,
                              new Token("LEX_ERROR", "Unsupported Character", yyline)); }
+
+<YYINITIAL>[0-9,_][a-zA-Z1-9_]* {return new Symbol(TokenIds.LEX_ERROR,
+                             new Token("LEX_ERROR", "Illegal Identifier", yyline)); }
 
 <YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
 						    new Token("CLASS", yyline)); }
