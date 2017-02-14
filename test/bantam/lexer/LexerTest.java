@@ -190,11 +190,22 @@ public class LexerTest
 
     @Test
     public void unsupportedCharacterToken() throws Exception {
-        Lexer lexer = new Lexer(new StringReader("? @ # ^ ` & << >>> << += -= *= /= %="));
+        Lexer lexer = new Lexer(new StringReader("? @ # ^ ` ~"));
         Symbol token = lexer.next_token();
-        while (((Token) token.value).getName() != "EOF") {
+        while (((Token)token.value).getName() != "EOF") {
             String name = ((Token) token.value).getName();
             assertEquals("LEX_ERROR", name);
+            token = lexer.next_token();
+        }
+    }
+
+    @Test
+    public void illegalIdentifierToken() throws Exception{
+        Lexer lexer = new Lexer(new StringReader("3name _3 3_3"));
+        Symbol token = lexer.next_token();
+        while (((Token)token.value).getName() != "EOF") {
+            String name = ((Token)token.value).getName();
+            assertEquals("LEX_ERROR",name);
             token = lexer.next_token();
         }
     }
@@ -330,7 +341,7 @@ public class LexerTest
 
     @Test
     public void intToken() throws Exception {
-        Lexer lexer = new Lexer(new StringReader("5236 001 003294"));
+        Lexer lexer = new Lexer(new StringReader("5236 001 003294 976"));
         Symbol token = lexer.next_token();
         String name = ((Token)token.value).getName();
         String attribute = ((Token)token.value).getAttribute();
@@ -338,22 +349,23 @@ public class LexerTest
         assertEquals("INT_CONST",name);
 
         token = lexer.next_token();
-        name = ((Token)token.value).getName();
-        attribute = ((Token)token.value).getAttribute();
-        assertEquals("001", attribute);
-        assertEquals("INT_CONST",name);
+        while (((Token)token.value).getName() != "EOF") {
+            name = ((Token) token.value).getName();
+            assertEquals("INT_CONST", name);
+            token = lexer.next_token();
+        }
     }
 
     @Test
     public void invalidIntToken() throws Exception {
-        Lexer lexer = new Lexer(new StringReader("5236001003294 2147484000"));
+        Lexer lexer = new Lexer(new StringReader("5236001003294 2147484000 415476820366"));
         Symbol token = lexer.next_token();
-        String name = ((Token)token.value).getName();
-        assertEquals("LEX_ERROR",name);
-
         token = lexer.next_token();
-        name = ((Token)token.value).getName();
-        assertEquals("LEX_ERROR",name);
+        while (((Token)token.value).getName() != "EOF") {
+            String name = ((Token) token.value).getName();
+            assertEquals("LEX_ERROR", name);
+            token = lexer.next_token();
+        }
     }
 
 }
