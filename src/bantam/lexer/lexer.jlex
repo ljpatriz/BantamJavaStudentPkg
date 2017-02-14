@@ -1,3 +1,11 @@
+/*
+Class: CS461
+Project: 1
+File: lexer.jlex
+Date: Monday, February 13, 2017
+Group: Larry Jacob Nick Luis
+*/
+
 /* Bantam Java Compiler and Language Toolset.
 
    Copyright (C) 2009 by Marc Corliss (corliss@hws.edu) and 

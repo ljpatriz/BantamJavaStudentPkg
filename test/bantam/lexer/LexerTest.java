@@ -1,3 +1,11 @@
+/*
+Class: CS461
+Project: 1
+File: LexerTest.java
+Date: Monday, February 13, 2017
+Group: Larry Jacob Nick Luis
+ */
+
 package bantam.lexer;
 
 import java_cup.runtime.Symbol;
