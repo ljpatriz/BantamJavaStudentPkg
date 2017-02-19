@@ -215,7 +215,7 @@ import java_cup.runtime.Symbol;
 <YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
 						    new Token("CLASS", yyline)); }
 
-<YYINITIAL>[?,@,#,^,`,~]     { return new Symbol(TokenIds.LEX_ERROR,
+<YYINITIAL>[? @ # ^ ` ~ $ ' :]     { return new Symbol(TokenIds.LEX_ERROR,
                              new Token("LEX_ERROR", "Unsupported Character", yyline)); }
 
 <YYINITIAL>"{"            { return new Symbol(TokenIds.LBRACE,
@@ -277,6 +277,10 @@ import java_cup.runtime.Symbol;
 
 <YYINITIAL>"%"            { return new Symbol(TokenIds.MODULUS,
                             new Token("MODULUS", yyline)); }
+
+<YYINITIAL>";"              { return new Symbol(TokenIds.SEMI,
+                                new Token("SEMI", yyline)); }
+
 
 
 <YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
