@@ -206,157 +206,161 @@ import java_cup.runtime.Symbol;
 
 %%
 <YYINITIAL>" "  {}
-<YYINITIAL>\t   {}
-<YYINITIAL>\n   {}
-<YYINITIAL>/\*(.|\n)*[^\\]+\*/ {}
-<YYINITIAL>//.* {}
+\t   {}
+\n   {}
+/\*(.|\n)*[^\\]+\*/ {}
+//.* {}
 
 
-<YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
+class        { return new Symbol(TokenIds.CLASS,
 						    new Token("CLASS", yyline)); }
 
-<YYINITIAL>[? @ # ^ ` ~ $ ' :]     { return new Symbol(TokenIds.LEX_ERROR,
+[? @ # ^ ` ~ $ ' :]     { return new Symbol(TokenIds.LEX_ERROR,
                              new Token("LEX_ERROR", "Unsupported Character", yyline)); }
 
-<YYINITIAL>"{"            { return new Symbol(TokenIds.LBRACE,
+"{"            { return new Symbol(TokenIds.LBRACE,
                             new Token("LBRACE", yyline)); }
 
-<YYINITIAL>"}"            { return new Symbol(TokenIds.RBRACE,
+"}"            { return new Symbol(TokenIds.RBRACE,
                             new Token("RBRACE", yyline)); }
 
-<YYINITIAL>"("            { return new Symbol(TokenIds.LPAREN,
+"("            { return new Symbol(TokenIds.LPAREN,
                             new Token("LPAREN", yyline)); }
 
-<YYINITIAL>")"            { return new Symbol(TokenIds.RPAREN,
+")"            { return new Symbol(TokenIds.RPAREN,
                             new Token("RPAREN", yyline)); }
 
-<YYINITIAL>"-"            { return new Symbol(TokenIds.MINUS,
+"-"            { return new Symbol(TokenIds.MINUS,
                             new Token("MINUS", yyline)); }
 
-<YYINITIAL>"+"            { return new Symbol(TokenIds.PLUS,
+"+"            { return new Symbol(TokenIds.PLUS,
                             new Token("PLUS", yyline)); }
 
-<YYINITIAL>"*"            { return new Symbol(TokenIds.TIMES,
+"*"            { return new Symbol(TokenIds.TIMES,
                             new Token("TIMES", yyline)); }
 
-<YYINITIAL>"/"            { return new Symbol(TokenIds.DIVIDE,
+"/"            { return new Symbol(TokenIds.DIVIDE,
                             new Token("DIVIDE", yyline)); }
 
-<YYINITIAL>"["            { return new Symbol(TokenIds.LSQBRACE,
+"["            { return new Symbol(TokenIds.LSQBRACE,
                             new Token("LSQBRACE", yyline)); }
 
-<YYINITIAL>"]"            { return new Symbol(TokenIds.RSQBRACE,
+"]"            { return new Symbol(TokenIds.RSQBRACE,
                             new Token("RSQBRACE", yyline)); }
 
-<YYINITIAL>"="            { return new Symbol(TokenIds.ASSIGN,
+"="            { return new Symbol(TokenIds.ASSIGN,
                             new Token("ASSIGN", yyline)); }
 
-<YYINITIAL>"++"            { return new Symbol(TokenIds.INCR,
+"++"            { return new Symbol(TokenIds.INCR,
                             new Token("INCR", yyline)); }
 
-<YYINITIAL>"--"            { return new Symbol(TokenIds.DECR,
+"--"            { return new Symbol(TokenIds.DECR,
                             new Token("DECR", yyline)); }
 
-<YYINITIAL>"<"            { return new Symbol(TokenIds.LT,
+"<"            { return new Symbol(TokenIds.LT,
                             new Token("LT", yyline)); }
 
-<YYINITIAL>">"            { return new Symbol(TokenIds.GT,
+">"            { return new Symbol(TokenIds.GT,
                             new Token("GT", yyline)); }
 
-<YYINITIAL>"=="            { return new Symbol(TokenIds.EQ,
+"=="            { return new Symbol(TokenIds.EQ,
                             new Token("EQ", yyline)); }
 
-<YYINITIAL>"!="            { return new Symbol(TokenIds.NE,
+"!="            { return new Symbol(TokenIds.NE,
                             new Token("NE", yyline)); }
 
-<YYINITIAL>"<="            { return new Symbol(TokenIds.LEQ,
+"<="            { return new Symbol(TokenIds.LEQ,
                             new Token("LEQ", yyline)); }
 
-<YYINITIAL>">="            { return new Symbol(TokenIds.GEQ,
+">="            { return new Symbol(TokenIds.GEQ,
                             new Token("GEQ", yyline)); }
 
-<YYINITIAL>"%"            { return new Symbol(TokenIds.MODULUS,
+"%"            { return new Symbol(TokenIds.MODULUS,
                             new Token("MODULUS", yyline)); }
 
-<YYINITIAL>";"              { return new Symbol(TokenIds.SEMI,
+";"              { return new Symbol(TokenIds.SEMI,
                                 new Token("SEMI", yyline)); }
 
 
 
-<YYINITIAL>class        { return new Symbol(TokenIds.CLASS,
+class        { return new Symbol(TokenIds.CLASS,
 						    new Token("CLASS", yyline)); }
 
-<YYINITIAL>true     { return new Symbol(TokenIds.BOOLEAN_CONST,
+true     { return new Symbol(TokenIds.BOOLEAN_CONST,
                                                new Token("TRUE",yyline));}
 
-<YYINITIAL>false    { return new Symbol(TokenIds.BOOLEAN_CONST,
+false    { return new Symbol(TokenIds.BOOLEAN_CONST,
                              new Token("FALSE",yyline));}
 
-<YYINITIAL>/\*[^(\*/)]* { return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
+/\*[^(\*/)]* { return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
 
-<YYINITIAL>\".*\n  { return new Symbol(TokenIds.LEX_ERROR, new Token("LEX_ERROR","String Constant spans multiple lines"
-                                                                                              , yyline));}
+\"[^\"\n]*\n+[^\"\n]*\" {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant spanning multiple lines",yyline));}
 
-<YYINITIAL>\"(\\.|[^\"(\n)])*\"  { return new Symbol(TokenIds.STRING_CONST,
-                                                               new Token("STRING_CONST",
-                                                               yytext().substring(1,yytext().length()-1)
-                                                               , yyline));}
-<YYINITIAL>\"(\\(\\\\)*\")*  {
-                            return new Symbol(TokenIds.LEX_ERROR,
-                            new Token("LEX_ERROR", "Unterminated String Constant", yyline));
-                             }
+\"([^\"]?(\\\")?)*\n {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
+\"[^\"]*$ {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 
-<YYINITIAL>for          { return new Symbol(TokenIds.FOR,
+\"[^\"\\]*(\\[^nrtf\"])+[^\"\\]*\" {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant contains illegal escape characters",yyline));}
+
+\"[^\"]*\" { if (yytext().length() > 5000) {
+                return new Symbol(TokenIds.error, new Token("LEX_ERROR",
+                "String constant of illegal length", yyline));
+           } else {
+                return new Symbol(TokenIds.STRING_CONST, new Token("STRING_CONST",
+                yytext().substring(1,yytext().length()-1), yyline));
+           }
+}
+
+for          { return new Symbol(TokenIds.FOR,
                             new Token("FOR", yyline)); }
-<YYINITIAL>instanceof   { return new Symbol(TokenIds.INSTANCEOF,
+instanceof   { return new Symbol(TokenIds.INSTANCEOF,
                             new Token("INSTANCEOF", yyline)); }
-<YYINITIAL>if           { return new Symbol(TokenIds.IF,
+if           { return new Symbol(TokenIds.IF,
                             new Token("IF", yyline)); }
-<YYINITIAL>return       { return new Symbol(TokenIds.RETURN,
+return       { return new Symbol(TokenIds.RETURN,
                             new Token("RETURN", yyline)); }
-<YYINITIAL>new          { return new Symbol(TokenIds.NEW,
+new          { return new Symbol(TokenIds.NEW,
                             new Token("NEW", yyline)); }
-<YYINITIAL>break        { return new Symbol(TokenIds.BREAK,
+break        { return new Symbol(TokenIds.BREAK,
                             new Token("BREAK", yyline)); }
-<YYINITIAL>else         { return new Symbol(TokenIds.ELSE,
+else         { return new Symbol(TokenIds.ELSE,
                             new Token("ELSE", yyline)); }
-<YYINITIAL>while        { return new Symbol(TokenIds.WHILE,
+while        { return new Symbol(TokenIds.WHILE,
                             new Token("WHILE", yyline)); }
-<YYINITIAL>extends      { return new Symbol(TokenIds.EXTENDS,
+extends      { return new Symbol(TokenIds.EXTENDS,
                             new Token("EXTENDS", yyline)); }
 
-<YYINITIAL>0*214748364[8-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*214748364[8-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
 ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*21474836[5-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*21474836[5-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
                                 ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*2147483[7-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*2147483[7-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
                                     ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*214748[4-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*214748[4-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
                                         ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*214749[0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*214749[0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
                                         ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*2147[5-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*2147[5-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
                                                 ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*214[8-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*214[8-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
                                                    ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*21[5-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*21[5-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
                                                         ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*2[2-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*2[2-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] { return new Symbol(TokenIds.LEX_ERROR, new Token
                                                             ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*[3-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+ { return new Symbol(TokenIds.LEX_ERROR, new Token
+0*[3-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]+ { return new Symbol(TokenIds.LEX_ERROR, new Token
                                                                  ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
-<YYINITIAL>0*[0-1]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?
+0*[0-1]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?
                             { return new Symbol(TokenIds.INT_CONST,
                                 new Token("INT_CONST", yytext(), yyline)); }
-<YYINITIAL>0*[2]?[01]?[0-4]?[0-7]?[0-4]?[0-8]?[0-3]?[0-6]?[0-4]?[0-7]?
+0*[2]?[01]?[0-4]?[0-7]?[0-4]?[0-8]?[0-3]?[0-6]?[0-4]?[0-7]?
                             { return new Symbol(TokenIds.INT_CONST,
                                 new Token("INT_CONST", yytext(), yyline)); }
 
 
-<YYINITIAL>[a-zA-Z][a-zA-Z1-9_]*    { return new Symbol(TokenIds.ID,
+[a-zA-Z][a-zA-Z1-9_]*    { return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 
-<YYINITIAL>[0-9_][a-zA-Z0-9_]* {return new Symbol(TokenIds.LEX_ERROR,
+[0-9_][a-zA-Z0-9_]* {return new Symbol(TokenIds.LEX_ERROR,
                              new Token("LEX_ERROR", "Illegal Identifier", yyline)); }
 
 .                      { throw new RuntimeException("Unmatched lexeme " +

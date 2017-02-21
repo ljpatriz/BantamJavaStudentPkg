@@ -260,7 +260,7 @@ public class LexerTest
         Symbol token = lexer.next_token();
         String name = ((Token)token.value).getName();
         String attribute = ((Token)token.value).getAttribute();
-        assertEquals("Unterminated String Constant",attribute);
+        assertEquals("String constant unterminated",attribute);
         assertEquals("LEX_ERROR",name);
     }
 
@@ -271,7 +271,7 @@ public class LexerTest
         String name = ((Token)token.value).getName();
         String attribute = ((Token)token.value).getAttribute();
         assertEquals("LEX_ERROR",name);
-        assertEquals("String Constant spans multiple lines",attribute);
+        assertEquals("String constant spanning multiple lines",attribute);
 
     }
 
