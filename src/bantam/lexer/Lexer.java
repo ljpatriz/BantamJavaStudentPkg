@@ -1,3 +1,10 @@
+/*
+Class: CS461
+Project: 1
+File: lexer.jlex
+Date: Monday, February 13, 2017
+Group: Larry Jacob Nick Luis
+*/
 /* Bantam Java Compiler and Language Toolset.
    Copyright (C) 2009 by Marc Corliss (corliss@hws.edu) and 
                          David Furcy (furcyd@uwosh.edu) and
@@ -373,12 +380,12 @@ public class Lexer implements java_cup.runtime.Scanner {
 		/* 28 */ YY_NO_ANCHOR,
 		/* 29 */ YY_NO_ANCHOR,
 		/* 30 */ YY_NO_ANCHOR,
-		/* 31 */ YY_NOT_ACCEPT,
+		/* 31 */ YY_NO_ANCHOR,
 		/* 32 */ YY_NO_ANCHOR,
 		/* 33 */ YY_NO_ANCHOR,
-		/* 34 */ YY_NO_ANCHOR,
+		/* 34 */ YY_END,
 		/* 35 */ YY_NO_ANCHOR,
-		/* 36 */ YY_NO_ANCHOR,
+		/* 36 */ YY_NOT_ACCEPT,
 		/* 37 */ YY_NO_ANCHOR,
 		/* 38 */ YY_NO_ANCHOR,
 		/* 39 */ YY_NO_ANCHOR,
@@ -404,36 +411,36 @@ public class Lexer implements java_cup.runtime.Scanner {
 		/* 59 */ YY_NO_ANCHOR,
 		/* 60 */ YY_NO_ANCHOR,
 		/* 61 */ YY_NO_ANCHOR,
-		/* 62 */ YY_NOT_ACCEPT,
+		/* 62 */ YY_NO_ANCHOR,
 		/* 63 */ YY_NO_ANCHOR,
 		/* 64 */ YY_NO_ANCHOR,
 		/* 65 */ YY_NO_ANCHOR,
 		/* 66 */ YY_NO_ANCHOR,
-		/* 67 */ YY_NO_ANCHOR,
-		/* 68 */ YY_NOT_ACCEPT,
+		/* 67 */ YY_NOT_ACCEPT,
+		/* 68 */ YY_NO_ANCHOR,
 		/* 69 */ YY_NO_ANCHOR,
 		/* 70 */ YY_NO_ANCHOR,
 		/* 71 */ YY_NO_ANCHOR,
-		/* 72 */ YY_NOT_ACCEPT,
-		/* 73 */ YY_NO_ANCHOR,
+		/* 72 */ YY_NO_ANCHOR,
+		/* 73 */ YY_NOT_ACCEPT,
 		/* 74 */ YY_NO_ANCHOR,
 		/* 75 */ YY_NO_ANCHOR,
-		/* 76 */ YY_NOT_ACCEPT,
-		/* 77 */ YY_NO_ANCHOR,
+		/* 76 */ YY_NO_ANCHOR,
+		/* 77 */ YY_NOT_ACCEPT,
 		/* 78 */ YY_NO_ANCHOR,
-		/* 79 */ YY_NOT_ACCEPT,
+		/* 79 */ YY_NO_ANCHOR,
 		/* 80 */ YY_NO_ANCHOR,
-		/* 81 */ YY_NO_ANCHOR,
-		/* 82 */ YY_NOT_ACCEPT,
+		/* 81 */ YY_NOT_ACCEPT,
+		/* 82 */ YY_NO_ANCHOR,
 		/* 83 */ YY_NO_ANCHOR,
 		/* 84 */ YY_NO_ANCHOR,
-		/* 85 */ YY_NOT_ACCEPT,
+		/* 85 */ YY_NO_ANCHOR,
 		/* 86 */ YY_NO_ANCHOR,
 		/* 87 */ YY_NO_ANCHOR,
-		/* 88 */ YY_NOT_ACCEPT,
+		/* 88 */ YY_NO_ANCHOR,
 		/* 89 */ YY_NO_ANCHOR,
 		/* 90 */ YY_NO_ANCHOR,
-		/* 91 */ YY_NOT_ACCEPT,
+		/* 91 */ YY_NO_ANCHOR,
 		/* 92 */ YY_NO_ANCHOR,
 		/* 93 */ YY_NO_ANCHOR,
 		/* 94 */ YY_NO_ANCHOR,
@@ -443,7 +450,7 @@ public class Lexer implements java_cup.runtime.Scanner {
 		/* 98 */ YY_NO_ANCHOR,
 		/* 99 */ YY_NO_ANCHOR,
 		/* 100 */ YY_NO_ANCHOR,
-		/* 101 */ YY_NOT_ACCEPT,
+		/* 101 */ YY_NO_ANCHOR,
 		/* 102 */ YY_NO_ANCHOR,
 		/* 103 */ YY_NO_ANCHOR,
 		/* 104 */ YY_NO_ANCHOR,
@@ -545,113 +552,137 @@ public class Lexer implements java_cup.runtime.Scanner {
 		/* 200 */ YY_NO_ANCHOR,
 		/* 201 */ YY_NO_ANCHOR,
 		/* 202 */ YY_NO_ANCHOR,
-		/* 203 */ YY_NO_ANCHOR
+		/* 203 */ YY_NO_ANCHOR,
+		/* 204 */ YY_NO_ANCHOR,
+		/* 205 */ YY_NO_ANCHOR,
+		/* 206 */ YY_NO_ANCHOR,
+		/* 207 */ YY_NO_ANCHOR,
+		/* 208 */ YY_NO_ANCHOR,
+		/* 209 */ YY_NO_ANCHOR,
+		/* 210 */ YY_NO_ANCHOR,
+		/* 211 */ YY_NO_ANCHOR,
+		/* 212 */ YY_NO_ANCHOR,
+		/* 213 */ YY_NO_ANCHOR,
+		/* 214 */ YY_NO_ANCHOR,
+		/* 215 */ YY_NO_ANCHOR,
+		/* 216 */ YY_NO_ANCHOR,
+		/* 217 */ YY_NO_ANCHOR,
+		/* 218 */ YY_NO_ANCHOR,
+		/* 219 */ YY_NO_ANCHOR,
+		/* 220 */ YY_NO_ANCHOR,
+		/* 221 */ YY_NO_ANCHOR,
+		/* 222 */ YY_NO_ANCHOR,
+		/* 223 */ YY_NO_ANCHOR,
+		/* 224 */ YY_NO_ANCHOR,
+		/* 225 */ YY_NO_ANCHOR,
+		/* 226 */ YY_NO_ANCHOR
 	};
 	private int yy_cmap[] = unpackFromString(1,130,
-"7:9,2,3,7:2,8,7:18,1,25,32,13,7,26,7:2,16,17,5,19,13,18,7,4,42,44,43,48,45," +
-"51,49,46,47,50,7:2,23,22,24,13:2,52:26,20,6,21,13,53,13,11,37,9,41,30,31,52" +
-",39,34,52,38,10,52,35,33,52:2,28,12,27,29,52,36,40,52:2,14,7,15,13,7,0:2")[0];
+"26:9,2,3,26:2,8,26:18,1,21,24,9:2,22,26,9,12,13,5,15,26,14,26,4,44,46,45,50" +
+",47,53,51,48,49,52,9,23,19,18,20,9:2,54:26,16,6,17,9,55,9,29,39,27,43,34,35" +
+",54,41,37,54,40,28,54,7,36,54:2,32,30,31,33,54,38,42,54:2,10,26,11,9,26,0,2" +
+"5")[0];
 
-	private int yy_rmap[] = unpackFromString(1,204,
-"0,1:4,2,1:2,3,1:5,4,5,1:2,6,7,8,1,9,10,11,1:6,12,1,13,14:5,15,14:7,9:10,16," +
-"17,18,19,20,21,12,22,23,12,24,13,1,9,25,15,21,26,27,28,29,30,31,32,33,34,35" +
-",36,37,38,39,22,40,41,42,43,44,45,46,47,48,16,49,50,28,51,52,53,54,55,56,57" +
-",58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82" +
-",83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,14,99,100,101,102,103,104," +
-"105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,119,122" +
-",123,124,125,126,127,128,129,127,130,131,132,133,134,135,136,137,138,139,14" +
-"0,141,142,143,144,145,146,147,148,149")[0];
+	private int yy_rmap[] = unpackFromString(1,227,
+"0,1:4,2,1:2,3,1:5,4,5,1:2,6,7,8,1:2,9,10,11,12,1:8,13,14,13,1,13,1,13:2,14," +
+"13:7,10:10,15,16,17,18,19,20,21,22,23,24,25,26,27,10,28,29,23,30,31,32,33,3" +
+"4,35,36,37,38,39,40,41,22,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,15,5" +
+"7,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,8" +
+"2,83,84,85,86,87,88,89,60,53,90,91,92,13,93,94,95,96,97,98,99,100,101,102,1" +
+"03,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121," +
+"122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140" +
+",141,142,143,141,144,145,146,147,148,149,150,151,149,152,153,154,155,156,15" +
+"7,158,159,160,161,162,163,164,165,166,167,168,169,170,171")[0];
 
-	private int yy_nxt[][] = unpackFromString(150,54,
-"1,2,3,4,5,6,7:2,-1,8,150:3,9,10,11,12,13,14,15,16,17,18,19,20,59,21,124,153" +
-",150,126,99,66,150,60,103,155,157,150:4,58,201,202,203:7,150,22,-1:58,23,24" +
-",-1:57,150,128,150:2,-1:14,150:5,-1,150:9,-1,150:11,-1:18,25,-1:54,26,-1:56" +
-",27,-1:53,28,-1:53,29,-1:40,22:4,-1:14,22:5,-1,22:21,-1,23:2,-1,23:4,-1,23:" +
-"45,-1,100:3,72:2,24,100,104,100:7,72:2,100:36,-1,31:2,32,31:2,101,31,62,31:" +
-"7,68:2,31:14,33,31:21,-1,68:2,32,68:4,-1,68:45,-1:9,150:4,-1:14,150:5,-1,15" +
-"0:9,-1,150:11,-1,72:4,82,85,72,88,72:45,-1:9,22:4,-1:14,22:5,-1,22:9,57:10," +
-"22:2,-1:9,22:4,-1:14,22:5,-1,22:9,58,201,202,203:7,22:2,-1:22,30,-1:40,150:" +
-"4,-1:14,150:4,34,-1,150:2,134,150:6,-1,150:11,-1,61:3,-1:2,61:10,-1:2,61:36" +
-",-1,62:2,-1,62:2,79,62:9,-1:2,62:14,69,62:21,-1,88:4,91,-1,88:47,-1:9,22:4," +
-"-1:14,22:5,-1,22:9,47:5,22,47:2,22,47,22:2,-1:9,150:4,-1:14,150,35,150:3,-1" +
-",150:9,-1,150:11,-1:9,150:4,-1:14,150:5,-1,150:3,36,150:5,-1,150:11,-1:9,22" +
-":4,-1:14,22:5,-1,22:9,48:10,22:2,-1:9,150:4,-1:14,150:3,37,150,-1,150:9,-1," +
-"150:11,-1,31:2,32,31:2,76,31,62,31:23,63,31:21,-1:9,22:4,-1:14,22:5,-1,22:9" +
-",49:10,22:2,-1:9,150:4,-1:14,150:3,38,150,-1,150:9,-1,150:11,-1,62:2,-1,62:" +
-"2,79,62:25,73,62:21,-1:9,22:4,-1:14,22:5,-1,22:9,50:10,22:2,-1:9,150:3,40,-" +
-"1:14,150:5,-1,150:9,-1,150:11,-1,72:3,39,82,85,72,88,72:45,-1:9,22:4,-1:14," +
-"22:5,-1,22:9,47:5,51,47:2,51,47,22:2,-1:9,150:4,-1:14,150:3,41,150,-1,150:9" +
-",-1,150:11,-1,72:5,85,72,88,72:45,-1:9,22:4,-1:14,22:5,-1,22:9,52:10,22:2,-" +
-"1:9,150:4,-1:14,150:3,42,150,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:" +
-"9,53:10,22:2,-1:9,150:4,-1:14,150:5,-1,150:5,43,150:3,-1,150:11,-1,88:3,64," +
-"91,-1,88:47,-1:9,22:4,-1:14,22:5,-1,22:9,54:10,22:2,-1:9,150:4,-1:14,150:5," +
-"-1,150:2,44,150:6,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,55:10,22:2,-1:9,15" +
-"0:3,45,-1:14,150:5,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,56:10,22" +
-":2,-1:9,150:4,-1:14,150:4,46,-1,150:9,-1,150:11,-1:9,150:2,132,150,-1:14,15" +
-"0:5,-1,67,150:8,-1,150:11,-1,100:3,72,82,24,100,104,100:7,72:2,100:36,-1:9," +
-"22:4,-1:14,22:5,-1,22:9,65:4,70:2,65,70:3,22:2,-1:9,150:4,-1:14,150:3,71,15" +
-"0,-1,150:9,-1,150:11,-1,104:3,88,91,61,104:9,88:2,104:36,-1:9,22:4,-1:14,22" +
-":5,-1,22:9,70:10,22:2,-1:9,150:4,-1:14,150:2,75,150:2,-1,150:9,-1,150:11,-1" +
-":9,22:4,-1:14,22:5,-1,22:9,74:10,22:2,-1:9,150:3,78,-1:14,150:5,-1,150:9,-1" +
-",150:11,-1:9,22:4,-1:14,22:5,-1,22:9,77:10,22:2,-1:9,150:3,81,-1:14,150:5,-" +
-"1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,80:10,22:2,-1:9,150:3,84,-1:" +
-"14,150:5,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,65:3,83,86:2,65,86" +
-":3,22:2,-1:9,150,87,150:2,-1:14,150:5,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22" +
-":5,-1,22:9,89:10,22:2,-1:9,150:2,90,150,-1:14,150:5,-1,150:9,-1,150:11,-1:9" +
-",22:4,-1:14,22:5,-1,22:9,92:10,22:2,-1:9,150:4,-1:14,150,93,150:3,-1,150:9," +
-"-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,94:10,22:2,-1:9,150:4,-1:14,150:5,-1" +
-",150:8,95,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,96:10,22:2,-1:9,150:4,-1:1" +
-"4,150:5,-1,97,150:8,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,98:10,22:2,-1:9," +
-"150:4,-1:14,150,106,150:3,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,1" +
-"02:4,105:2,102:2,105,102,22:2,-1:9,150,108,150:2,-1:14,150:5,-1,150:7,152,1" +
-"50,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,105:10,22:2,-1:9,150:2,110,150,-1" +
-":14,150:5,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,107:10,22:2,-1:9," +
-"150:4,-1:14,140,150:4,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,109:1" +
-"0,22:2,-1:9,150,112,150:2,-1:14,150:5,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22" +
-":5,-1,22:9,102:4,111:2,102,113,111,102,22:2,-1:9,150:3,144,-1:14,150:5,-1,1" +
-"50:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,115:10,22:2,-1:9,150:4,-1:14,15" +
-"0:5,-1,150,114,150:7,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,117:10,22:2,-1:" +
-"9,150:4,-1:14,150:3,116,150,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9" +
-",119:10,22:2,-1:9,150:4,-1:14,150:2,118,150:2,-1,150:9,-1,150:11,-1:9,22:4," +
-"-1:14,22:5,-1,22:9,121:10,22:2,-1:9,150:4,-1:14,150:3,145,150,-1,150:9,-1,1" +
-"50:11,-1:9,22:4,-1:14,22:5,-1,22:9,123:10,22:2,-1:9,150:4,-1:14,146,150:4,-" +
-"1,150:9,-1,150:11,-1:9,150:4,-1:14,150:5,-1,150:2,120,150:6,-1,150:11,-1:9," +
-"150:2,147,150,-1:14,150:5,-1,150:9,-1,150:11,-1:9,150:4,-1:14,150:5,-1,150:" +
-"2,148,150:6,-1,150:11,-1:9,149,150:3,-1:14,150:5,-1,150:9,-1,150:11,-1:9,15" +
-"0:4,-1:14,150:3,122,150,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,125" +
-":3,127:3,125,127:3,22:2,-1:9,150:4,-1:14,142,150:4,-1,150:9,-1,150:11,-1:9," +
-"150:4,-1:14,150:3,130,150,-1,150:9,-1,150:11,-1:9,22:4,-1:14,22:5,-1,22:9,1" +
-"27:10,22:2,-1:9,150:4,-1:14,150:5,-1,150:6,136,150:2,-1,150:11,-1:9,22:4,-1" +
-":14,22:5,-1,22:9,129:10,22:2,-1:9,150:4,-1:14,150,138,150:3,-1,150:9,-1,150" +
-":11,-1:9,22:4,-1:14,22:5,-1,22:9,125:3,131:3,133,131:3,22:2,-1:9,22:4,-1:14" +
-",22:5,-1,22:9,135:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,137:10,22:2,-1:9,22:" +
-"4,-1:14,22:5,-1,22:9,139:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,141:10,22:2,-" +
-"1:9,22:4,-1:14,22:5,-1,22:9,143:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,151:8," +
-"154,151,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,154:10,22:2,-1:9,22:4,-1:14,22:5," +
-"-1,22:9,156:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,151:5,158,151:2,159,151,22" +
-":2,-1:9,22:4,-1:14,22:5,-1,22:9,160:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,16" +
-"1:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,162:10,22:2,-1:9,22:4,-1:14,22:5,-1," +
-"22:9,165:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,163:10,22:2,-1:9,22:4,-1:14,2" +
-"2:5,-1,22:9,164:4,165:2,164,165:3,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,166:10," +
-"22:2,-1:9,22:4,-1:14,22:5,-1,22:9,164:3,167,168:2,164,168:3,22:2,-1:9,22:4," +
-"-1:14,22:5,-1,22:9,169:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,170:10,22:2,-1:" +
-"9,22:4,-1:14,22:5,-1,22:9,171:4,174:2,171,174:3,22:2,-1:9,22:4,-1:14,22:5,-" +
-"1,22:9,174:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,172:10,22:2,-1:9,22:4,-1:14" +
-",22:5,-1,22:9,173:5,174,173:2,174,173,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,175" +
-":10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,173:4,176,177,173:2,177,173,22:2,-1:9" +
-",22:4,-1:14,22:5,-1,22:9,178:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,179:4,180" +
-",183,179,180,183,180,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,180:3,179,180,183,18" +
-"0,179,183,179,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,183:10,22:2,-1:9,22:4,-1:14" +
-",22:5,-1,22:9,180:5,183,180:2,183,180,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,179" +
-":4,180,183,179:2,183,179,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,181:10,22:2,-1:9" +
-",22:4,-1:14,22:5,-1,22:9,182:4,183:2,182,183:3,22:2,-1:9,22:4,-1:14,22:5,-1" +
-",22:9,184:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,182:3,185,186:2,182,186:3,22" +
-":2,-1:9,22:4,-1:14,22:5,-1,22:9,187:5,188,187:2,189,187,22:2,-1:9,22:4,-1:1" +
-"4,22:5,-1,22:9,190:4,188:2,190,188,189,188,22:2,-1:9,22:4,-1:14,22:5,-1,22:" +
-"9,191:3,190,189:2,191,190,189,190,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,189:10," +
-"22:2,-1:9,22:4,-1:14,22:5,-1,22:9,192:10,22:2,-1:9,22:4,-1:14,22:5,-1,22:9," +
-"193,194,195,194:7,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,196:4,197,198,196,197,1" +
-"99,197,22:2,-1:9,22:4,-1:14,22:5,-1,22:9,200:10,22:2");
+	private int yy_nxt[][] = unpackFromString(172,56,
+"1,2,3,4,5,6,7,8,-1,9,10,11,12,13,14,15,16,17,18,19,20,63,21,22,23,1,7,134,1" +
+"45:3,151,155,145,157,159,145,64,161,163,145:4,62,224,225,226:7,145,24,-1:60" +
+",25,26,-1:57,145,-1:19,145:7,71,145:9,-1,145:11,-1:14,27,-1:56,28,-1:58,29," +
+"-1:55,30,-1:55,31,-1:38,23:2,65,23:2,72,23:17,33,34,23:30,-1:7,24,-1:19,24:" +
+"29,-1,25:2,-1,25:4,-1,25:16,-1,25:30,-1,135:3,36:2,26,135,146,135:3,36:2,13" +
+"5:11,-1,135:30,-1:7,145,-1:19,145:17,-1,145:11,-1,36:4,67,73,36,77,36:16,-1" +
+",36:30,-1:7,24,-1:19,24:17,61:10,24:2,-1:7,24,-1:19,24:17,62,224,225,226:7," +
+"24:2,-1:18,32,-1:44,139,-1:19,145:8,35,145:8,-1,145:11,-1,137:2,65,137:2,76" +
+",137:17,38,34,137:30,-1,66:3,-1:2,66:6,-1:2,66:11,-1,66:30,-1,36:3,43,67,73" +
+",36,77,36:16,-1,36:30,-1,90:5,108,90:17,-1:2,90:30,-1,77:4,81,-1,77:18,-1,7" +
+"7:30,-1:7,24,-1:19,24:17,51:5,24,51:2,24,51,24:2,-1:7,145,-1:19,145:11,37,1" +
+"45:5,-1,145:11,-1,80:2,148,80:2,84,87,80:16,90,34,80:5,87:2,80:2,87,80:20,-" +
+"1,36:5,73,36,77,36:16,-1,36:30,-1:7,145,-1:19,145:2,149,145:14,-1,145:11,-1" +
+",153:2,93,153:2,96,99,153:16,68,34,153:5,99:2,153:2,99,153:20,-1:7,24,-1:19" +
+",24:17,52:10,24:2,-1:7,145,-1:19,145:6,101,145:10,-1,145:11,-1,141:2,143,14" +
+"1:2,72,141,102,141:15,40,34,141:30,-1,77:3,69,81,-1,77:18,-1,77:30,-1:7,24," +
+"-1:19,24:17,53:10,24:2,-1:7,145,-1:19,145:4,104,145:12,-1,145:11,-1,141:2,1" +
+"43,141:2,72,141,102,141:15,90,34,141:30,-1:7,24,-1:19,24:17,54:10,24:2,-1:7" +
+",145,-1:19,145:3,107,145:13,-1,145:11,-1,87:2,154,87:2,105,87:17,33,34,87:3" +
+"0,-1:7,24,-1:19,24:17,51:5,55,51:2,55,51,24:2,-1:7,145,-1:19,145,109,145:15" +
+",-1,145:11,-1:7,24,-1:19,24:17,56:10,24:2,-1:7,145,-1:19,145:5,39,145:11,-1" +
+",145:11,-1,114:5,112,114:17,40,34,114:30,-1:7,24,-1:19,24:17,57:10,24:2,-1:" +
+"7,145,-1:19,145:10,113,145:6,-1,145:11,-1,150:2,114,150:2,76,150:17,68,34,1" +
+"50:30,-1:7,24,-1:19,24:17,58:10,24:2,-1:7,145,-1:19,145:7,115,145:9,-1,145:" +
+"11,-1,99:2,116,99:2,118,99:17,38,34,99:30,-1:7,24,-1:19,24:17,59:10,24:2,-1" +
+":7,145,-1:19,145:7,41,145:9,-1,145:11,-1,141:2,143,141:2,105,141,102,141:15" +
+",40,34,141:30,-1:7,24,-1:19,24:17,60:10,24:2,-1:7,145,-1:19,145:6,119,145:1" +
+"0,-1,145:11,-1,87:2,154,87:2,105,87:17,90,34,87:30,-1:7,145,-1:19,145:7,42," +
+"145:9,-1,145:11,-1,90:5,108,90:18,-1,90:30,-1:7,145,-1:19,145:3,123,145:13," +
+"-1,145:11,-1,110:2,140,110:2,112,110:17,33,34,110:30,-1:7,145,-1:19,145:4,1" +
+"44,145:12,-1,145:11,-1,93:5,120,116,93:16,90,34,93:5,116:2,93:2,116,93:20,-" +
+"1:7,145,-1:19,145,124,145:15,-1,145:11,-1,114:5,122,114:17,40,34,114:30,-1:" +
+"7,145,-1:19,145:2,125,145:14,-1,145:11,-1,116:5,122,116:17,33,34,116:30,-1:" +
+"7,145,-1:19,145:3,44,145:13,-1,145:11,-1,99:2,116,99:2,118,99:17,68,34,99:3" +
+"0,-1:7,145,-1:19,145:5,126,145:11,-1,145:11,-1,114:5,112,114:17,90,34,114:3" +
+"0,-1:7,127,-1:19,145:17,-1,145:11,-1,116:5,122,116:17,90,34,116:30,-1:7,145" +
+",-1:19,145:7,45,145:9,-1,145:11,-1:7,145,-1:19,145:7,46,145:9,-1,145:11,-1:" +
+"7,145,-1:19,145:13,47,145:3,-1,145:11,-1:7,48,-1:19,145:17,-1,145:11,-1:7,1" +
+"45,-1:19,145:16,129,-1,145:11,-1:7,130,-1:19,145:17,-1,145:11,-1:7,145,-1:1" +
+"9,145:3,49,145:13,-1,145:11,-1:7,145,-1:19,131,145:16,-1,145:11,-1:7,145,-1" +
+":19,145:7,132,145:9,-1,145:11,-1:7,145,-1:19,145:9,133,145:7,-1,145:11,-1:7" +
+",145,-1:19,145:8,50,145:8,-1,145:11,-1:7,145,-1:19,145,75,145:15,-1,145:11," +
+"-1,135:3,36,67,26,135,146,135:3,36:2,135:11,-1,135:30,-1:7,24,-1:19,24:17,7" +
+"0:4,74:2,70,74:3,24:2,-1,137:2,140,137:2,76,137:17,38,34,137:30,-1:7,145,-1" +
+":19,145:4,142,145:12,-1,145:11,-1:7,145,-1:19,145:3,111,145:13,-1,145:11,-1" +
+":7,145,-1:19,145:7,121,145:9,-1,145:11,-1,150:2,143,150:2,118,150:17,38,34," +
+"150:30,-1:7,145,-1:19,145:2,128,145:14,-1,145:11,-1,146:3,77,81,66,146:5,77" +
+":2,146:11,-1,146:30,-1:7,24,-1:19,24:17,74:10,24:2,-1,150:2,143,150:2,76,15" +
+"0:17,38,34,150:30,-1:7,145,-1:19,145:3,117,145:13,-1,145:11,-1,150:2,114,15" +
+"0:2,118,150:17,38,34,150:30,-1:7,145,-1:19,145:5,79,145:11,-1,145:11,-1:7,2" +
+"4,-1:19,24:17,78:10,24:2,-1,150:2,114,150:2,76,150:17,38,34,150:30,-1,99:2," +
+"154,99:2,118,99:17,38,34,99:30,-1:7,145,-1:19,145:7,83,145:9,-1,145:11,-1:7" +
+",24,-1:19,24:17,82:10,24:2,-1:7,145,-1:19,145,86,145:13,138,145,-1,145:11,-" +
+"1:7,24,-1:19,24:17,85:10,24:2,-1:7,145,-1:19,145:2,89,145:6,92,145:7,-1,145" +
+":11,-1:7,24,-1:19,24:17,70:3,88,91:2,70,91:3,24:2,-1:7,145,-1:19,145:14,95," +
+"145:2,-1,145:11,-1:7,24,-1:19,24:17,94:10,24:2,-1:7,145,-1:19,145:5,98,145:" +
+"11,-1,145:11,-1:7,24,-1:19,24:17,97:10,24:2,-1:7,24,-1:19,24:17,100:10,24:2" +
+",-1:7,24,-1:19,24:17,103:10,24:2,-1:7,24,-1:19,24:17,106:10,24:2,-1:7,24,-1" +
+":19,24:17,136:4,147:2,136:2,147,136,24:2,-1:7,24,-1:19,24:17,147:10,24:2,-1" +
+":7,24,-1:19,24:17,152:10,24:2,-1:7,24,-1:19,24:17,156:10,24:2,-1:7,24,-1:19" +
+",24:17,136:4,158:2,136,160,158,136,24:2,-1:7,24,-1:19,24:17,162:10,24:2,-1:" +
+"7,24,-1:19,24:17,164:10,24:2,-1:7,24,-1:19,24:17,165:10,24:2,-1:7,24,-1:19," +
+"24:17,166:10,24:2,-1:7,24,-1:19,24:17,167:10,24:2,-1:7,24,-1:19,24:17,168:3" +
+",169:3,168,169:3,24:2,-1:7,24,-1:19,24:17,169:10,24:2,-1:7,24,-1:19,24:17,1" +
+"70:10,24:2,-1:7,24,-1:19,24:17,168:3,171:3,172,171:3,24:2,-1:7,24,-1:19,24:" +
+"17,173:10,24:2,-1:7,24,-1:19,24:17,174:10,24:2,-1:7,24,-1:19,24:17,175:10,2" +
+"4:2,-1:7,24,-1:19,24:17,176:10,24:2,-1:7,24,-1:19,24:17,177:10,24:2,-1:7,24" +
+",-1:19,24:17,178:8,179,178,24:2,-1:7,24,-1:19,24:17,179:10,24:2,-1:7,24,-1:" +
+"19,24:17,180:10,24:2,-1:7,24,-1:19,24:17,178:5,181,178:2,182,178,24:2,-1:7," +
+"24,-1:19,24:17,183:10,24:2,-1:7,24,-1:19,24:17,184:10,24:2,-1:7,24,-1:19,24" +
+":17,185:10,24:2,-1:7,24,-1:19,24:17,188:10,24:2,-1:7,24,-1:19,24:17,186:10," +
+"24:2,-1:7,24,-1:19,24:17,187:4,188:2,187,188:3,24:2,-1:7,24,-1:19,24:17,189" +
+":10,24:2,-1:7,24,-1:19,24:17,187:3,190,191:2,187,191:3,24:2,-1:7,24,-1:19,2" +
+"4:17,192:10,24:2,-1:7,24,-1:19,24:17,193:10,24:2,-1:7,24,-1:19,24:17,194:4," +
+"197:2,194,197:3,24:2,-1:7,24,-1:19,24:17,197:10,24:2,-1:7,24,-1:19,24:17,19" +
+"5:10,24:2,-1:7,24,-1:19,24:17,196:5,197,196:2,197,196,24:2,-1:7,24,-1:19,24" +
+":17,198:10,24:2,-1:7,24,-1:19,24:17,196:4,199,200,196:2,200,196,24:2,-1:7,2" +
+"4,-1:19,24:17,201:10,24:2,-1:7,24,-1:19,24:17,202:4,203,206,202,203,206,203" +
+",24:2,-1:7,24,-1:19,24:17,203:3,202,203,206,203,202,206,202,24:2,-1:7,24,-1" +
+":19,24:17,206:10,24:2,-1:7,24,-1:19,24:17,203:5,206,203:2,206,203,24:2,-1:7" +
+",24,-1:19,24:17,202:4,203,206,202:2,206,202,24:2,-1:7,24,-1:19,24:17,204:10" +
+",24:2,-1:7,24,-1:19,24:17,205:4,206:2,205,206:3,24:2,-1:7,24,-1:19,24:17,20" +
+"7:10,24:2,-1:7,24,-1:19,24:17,205:3,208,209:2,205,209:3,24:2,-1:7,24,-1:19," +
+"24:17,210:5,211,210:2,212,210,24:2,-1:7,24,-1:19,24:17,213:4,211:2,213,211," +
+"212,211,24:2,-1:7,24,-1:19,24:17,214:3,213,212:2,214,213,212,213,24:2,-1:7," +
+"24,-1:19,24:17,212:10,24:2,-1:7,24,-1:19,24:17,215:10,24:2,-1:7,24,-1:19,24" +
+":17,216,217,218,217:7,24:2,-1:7,24,-1:19,24:17,219:4,220,221,219,220,222,22" +
+"0,24:2,-1:7,24,-1:19,24:17,223:10,24:2");
 
 	public java_cup.runtime.Symbol next_token ()
 		throws java.io.IOException {
@@ -717,8 +748,10 @@ public class Lexer implements java_cup.runtime.Scanner {
 					yy_to_mark();
 					switch (yy_last_accept_state) {
 					case 0:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -2:
 						break;
 					case 1:
@@ -758,8 +791,10 @@ public class Lexer implements java_cup.runtime.Scanner {
 					case -10:
 						break;
 					case 9:
-						{ return new Symbol(TokenIds.LEX_ERROR,
-                             new Token("LEX_ERROR", "Unsupported Character", yyline)); }
+						{
+    return new Symbol(
+            TokenIds.LEX_ERROR, new Token("LEX_ERROR", "Unsupported Character", yyline));
+}
 					case -11:
 						break;
 					case 10:
@@ -823,860 +858,1150 @@ public class Lexer implements java_cup.runtime.Scanner {
 					case -23:
 						break;
 					case 22:
-						{return new Symbol(TokenIds.LEX_ERROR,
-                             new Token("LEX_ERROR", "Illegal Identifier", yyline)); }
+						{ return new Symbol(TokenIds.SEMI,
+                                new Token("SEMI", yyline)); }
 					case -24:
 						break;
 					case 23:
-						{}
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -25:
 						break;
 					case 24:
-						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
+						{return new Symbol(TokenIds.LEX_ERROR,
+                             new Token("LEX_ERROR", "Illegal Identifier", yyline)); }
 					case -26:
 						break;
 					case 25:
-						{ return new Symbol(TokenIds.DECR,
-                            new Token("DECR", yyline)); }
+						{}
 					case -27:
 						break;
 					case 26:
-						{ return new Symbol(TokenIds.INCR,
-                            new Token("INCR", yyline)); }
+						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
 					case -28:
 						break;
 					case 27:
-						{ return new Symbol(TokenIds.EQ,
-                            new Token("EQ", yyline)); }
+						{ return new Symbol(TokenIds.DECR,
+                            new Token("DECR", yyline)); }
 					case -29:
 						break;
 					case 28:
-						{ return new Symbol(TokenIds.LEQ,
-                            new Token("LEQ", yyline)); }
+						{ return new Symbol(TokenIds.INCR,
+                            new Token("INCR", yyline)); }
 					case -30:
 						break;
 					case 29:
-						{ return new Symbol(TokenIds.GEQ,
-                            new Token("GEQ", yyline)); }
+						{ return new Symbol(TokenIds.EQ,
+                            new Token("EQ", yyline)); }
 					case -31:
 						break;
 					case 30:
-						{ return new Symbol(TokenIds.NE,
-                            new Token("NE", yyline)); }
+						{ return new Symbol(TokenIds.LEQ,
+                            new Token("LEQ", yyline)); }
 					case -32:
 						break;
-					case 32:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token("LEX_ERROR","String Constant spans multiple lines"
-                                                                                              , yyline));}
+					case 31:
+						{ return new Symbol(TokenIds.GEQ,
+                            new Token("GEQ", yyline)); }
 					case -33:
 						break;
-					case 33:
-						{ return new Symbol(TokenIds.STRING_CONST,
-                                                               new Token("STRING_CONST",
-                                                               yytext().substring(1,yytext().length()-1)
-                                                               , yyline));}
+					case 32:
+						{ return new Symbol(TokenIds.NE,
+                            new Token("NE", yyline)); }
 					case -34:
 						break;
-					case 34:
-						{ return new Symbol(TokenIds.IF,
-                            new Token("IF", yyline)); }
+					case 33:
+						{
+    if (yytext().length() > 5000) {
+                return new Symbol(TokenIds.error, new Token("LEX_ERROR",
+                "String constant of illegal length", yyline));
+    } else {
+        return new Symbol(TokenIds.STRING_CONST, new Token("STRING_CONST",
+        yytext().substring(1,yytext().length()-1), yyline));
+    }
+}
 					case -35:
 						break;
-					case 35:
-						{ return new Symbol(TokenIds.FOR,
-                            new Token("FOR", yyline)); }
+					case 34:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -36:
 						break;
-					case 36:
-						{ return new Symbol(TokenIds.NEW,
-                            new Token("NEW", yyline)); }
+					case 35:
+						{ return new Symbol(TokenIds.IF, new Token("IF", yyline)); }
 					case -37:
 						break;
 					case 37:
-						{ return new Symbol(TokenIds.BOOLEAN_CONST,
-                                               new Token("TRUE",yyline));}
+						{ return new Symbol(TokenIds.NEW, new Token("NEW", yyline)); }
 					case -38:
 						break;
 					case 38:
-						{ return new Symbol(TokenIds.ELSE,
-                            new Token("ELSE", yyline)); }
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant spanning multiple lines",yyline));}
 					case -39:
 						break;
 					case 39:
-						{}
+						{ return new Symbol(TokenIds.FOR, new Token("FOR", yyline)); }
 					case -40:
 						break;
 					case 40:
-						{ return new Symbol(TokenIds.CLASS,
-						    new Token("CLASS", yyline)); }
+						{
+    return new Symbol(TokenIds.error, new Token(
+            "LEX_ERROR","String constant contains illegal escape characters",yyline));
+}
 					case -41:
 						break;
 					case 41:
-						{ return new Symbol(TokenIds.BOOLEAN_CONST,
-                             new Token("FALSE",yyline));}
+						{ return new Symbol(TokenIds.BOOLEAN_CONST, new Token("TRUE",yyline)); }
 					case -42:
 						break;
 					case 42:
-						{ return new Symbol(TokenIds.WHILE,
-                            new Token("WHILE", yyline)); }
+						{ return new Symbol(TokenIds.ELSE, new Token("ELSE", yyline)); }
 					case -43:
 						break;
 					case 43:
-						{ return new Symbol(TokenIds.BREAK,
-                            new Token("BREAK", yyline)); }
+						{}
 					case -44:
 						break;
 					case 44:
-						{ return new Symbol(TokenIds.RETURN,
-                            new Token("RETURN", yyline)); }
+						{ return new Symbol(TokenIds.CLASS, new Token("CLASS", yyline)); }
 					case -45:
 						break;
 					case 45:
-						{ return new Symbol(TokenIds.EXTENDS,
-                            new Token("EXTENDS", yyline)); }
+						{ return new Symbol(TokenIds.BOOLEAN_CONST, new Token("FALSE",yyline)); }
 					case -46:
 						break;
 					case 46:
-						{ return new Symbol(TokenIds.INSTANCEOF,
-                            new Token("INSTANCEOF", yyline)); }
+						{ return new Symbol(TokenIds.WHILE, new Token("WHILE", yyline)); }
 					case -47:
 						break;
 					case 47:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+						{ return new Symbol(TokenIds.BREAK, new Token("BREAK", yyline)); }
 					case -48:
 						break;
 					case 48:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                                            ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{ return new Symbol(TokenIds.RETURN, new Token("RETURN", yyline)); }
 					case -49:
 						break;
 					case 49:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                        ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{ return new Symbol(TokenIds.EXTENDS, new Token("EXTENDS", yyline)); }
 					case -50:
 						break;
 					case 50:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                    ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{ return new Symbol(TokenIds.INSTANCEOF, new Token("INSTANCEOF", yyline)); }
 					case -51:
 						break;
 					case 51:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -52:
 						break;
 					case 52:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -53:
 						break;
 					case 53:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                        ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -54:
 						break;
 					case 54:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                                ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -55:
 						break;
 					case 55:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                                   ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -56:
 						break;
 					case 56:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                                        ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -57:
 						break;
 					case 57:
-						{ return new Symbol(TokenIds.LEX_ERROR, new Token
-                                                                 ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -58:
 						break;
 					case 58:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -59:
 						break;
 					case 59:
-						{ throw new RuntimeException("Unmatched lexeme " +
-                            yytext() + " at line " + yyline); }
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -60:
 						break;
 					case 60:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -61:
 						break;
 					case 61:
-						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
+						{
+    return new Symbol(TokenIds.LEX_ERROR, new Token(
+        "LEX_ERROR", yytext() + " int const too big: line " + yyline, yyline));
+}
 					case -62:
 						break;
-					case 63:
-						{ return new Symbol(TokenIds.STRING_CONST,
-                                                               new Token("STRING_CONST",
-                                                               yytext().substring(1,yytext().length()-1)
-                                                               , yyline));}
+					case 62:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -63:
 						break;
-					case 64:
-						{}
-					case -64:
-						break;
-					case 65:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -65:
-						break;
-					case 66:
+					case 63:
 						{ throw new RuntimeException("Unmatched lexeme " +
                             yytext() + " at line " + yyline); }
-					case -66:
+					case -64:
 						break;
-					case 67:
+					case 64:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
+					case -65:
+						break;
+					case 65:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
+					case -66:
+						break;
+					case 66:
+						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
 					case -67:
 						break;
-					case 69:
-						{ return new Symbol(TokenIds.STRING_CONST,
-                                                               new Token("STRING_CONST",
-                                                               yytext().substring(1,yytext().length()-1)
-                                                               , yyline));}
+					case 68:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant spanning multiple lines",yyline));}
 					case -68:
 						break;
-					case 70:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 69:
+						{}
 					case -69:
+						break;
+					case 70:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -70:
 						break;
 					case 71:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -70:
-						break;
-					case 73:
-						{ return new Symbol(TokenIds.STRING_CONST,
-                                                               new Token("STRING_CONST",
-                                                               yytext().substring(1,yytext().length()-1)
-                                                               , yyline));}
 					case -71:
 						break;
-					case 74:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 72:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -72:
+						break;
+					case 74:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -73:
 						break;
 					case 75:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -73:
-						break;
-					case 77:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
 					case -74:
 						break;
-					case 78:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 76:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -75:
 						break;
-					case 80:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 78:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -76:
 						break;
-					case 81:
+					case 79:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -77:
 						break;
-					case 83:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 80:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -78:
 						break;
-					case 84:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 82:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -79:
 						break;
-					case 86:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -80:
-						break;
-					case 87:
+					case 83:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
+					case -80:
+						break;
+					case 84:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -81:
 						break;
-					case 89:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 85:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -82:
 						break;
-					case 90:
+					case 86:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -83:
 						break;
-					case 92:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 87:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -84:
 						break;
-					case 93:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 88:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -85:
 						break;
-					case 94:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -86:
-						break;
-					case 95:
+					case 89:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
+					case -86:
+						break;
+					case 90:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -87:
 						break;
-					case 96:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 91:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -88:
 						break;
-					case 97:
+					case 92:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -89:
 						break;
-					case 98:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 93:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -90:
 						break;
-					case 99:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 94:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -91:
 						break;
-					case 100:
-						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
+					case 95:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -92:
 						break;
-					case 102:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 96:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -93:
 						break;
-					case 103:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 97:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -94:
 						break;
-					case 104:
-						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
+					case 98:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -95:
 						break;
-					case 105:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 99:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -96:
 						break;
-					case 106:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 100:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -97:
 						break;
-					case 107:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -98:
-						break;
-					case 108:
+					case 101:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
+					case -98:
+						break;
+					case 102:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -99:
 						break;
-					case 109:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 103:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -100:
 						break;
-					case 110:
+					case 104:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -101:
 						break;
-					case 111:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 105:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -102:
 						break;
-					case 112:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 106:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -103:
 						break;
-					case 113:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 107:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -104:
 						break;
-					case 114:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 108:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -105:
 						break;
-					case 115:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 109:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -106:
 						break;
-					case 116:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 110:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -107:
 						break;
-					case 117:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 111:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -108:
 						break;
-					case 118:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 112:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -109:
 						break;
-					case 119:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 113:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -110:
 						break;
-					case 120:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 114:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -111:
 						break;
-					case 121:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -112:
-						break;
-					case 122:
+					case 115:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
+					case -112:
+						break;
+					case 116:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -113:
 						break;
-					case 123:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 117:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -114:
+						break;
+					case 118:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
+					case -115:
+						break;
+					case 119:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -116:
+						break;
+					case 120:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
+					case -117:
+						break;
+					case 121:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -118:
+						break;
+					case 122:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
+					case -119:
+						break;
+					case 123:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -120:
 						break;
 					case 124:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -115:
+					case -121:
 						break;
 					case 125:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -116:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -122:
 						break;
 					case 126:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -117:
+					case -123:
 						break;
 					case 127:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -118:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -124:
 						break;
 					case 128:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -119:
+					case -125:
 						break;
 					case 129:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -120:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -126:
 						break;
 					case 130:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -121:
+					case -127:
 						break;
 					case 131:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -122:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -128:
 						break;
 					case 132:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -123:
+					case -129:
 						break;
 					case 133:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -124:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
+					case -130:
 						break;
 					case 134:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -125:
+					case -131:
 						break;
 					case 135:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -126:
+						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
+					case -132:
 						break;
 					case 136:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
-					case -127:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -133:
 						break;
 					case 137:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -128:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
+					case -134:
 						break;
 					case 138:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
-					case -129:
-						break;
-					case 139:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -130:
-						break;
-					case 140:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
-					case -131:
-						break;
-					case 141:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -132:
-						break;
-					case 142:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
-					case -133:
-						break;
-					case 143:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-					case -134:
-						break;
-					case 144:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
 					case -135:
 						break;
-					case 145:
+					case 139:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -136:
 						break;
-					case 146:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 140:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -137:
 						break;
-					case 147:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 141:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -138:
 						break;
-					case 148:
+					case 142:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -139:
 						break;
-					case 149:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 143:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -140:
 						break;
-					case 150:
+					case 144:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -141:
 						break;
-					case 151:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 145:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -142:
 						break;
-					case 152:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 146:
+						{ return new Symbol(TokenIds.error, new Token("LEX_ERROR","unterminated multiline comment", yyline));}
 					case -143:
 						break;
-					case 153:
-						{ return new Symbol(TokenIds.ID,
-                                new Token("ID", yytext(),yyline));}
+					case 147:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -144:
 						break;
-					case 154:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 148:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -145:
 						break;
-					case 155:
+					case 149:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -146:
 						break;
-					case 156:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 150:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -147:
 						break;
-					case 157:
+					case 151:
 						{ return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
 					case -148:
 						break;
-					case 158:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 152:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -149:
 						break;
-					case 159:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 153:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -150:
 						break;
-					case 160:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 154:
+						{return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 					case -151:
 						break;
-					case 161:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 155:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -152:
 						break;
-					case 162:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 156:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -153:
 						break;
-					case 163:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 157:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -154:
 						break;
-					case 164:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 158:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -155:
 						break;
-					case 165:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 159:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -156:
 						break;
-					case 166:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 160:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -157:
 						break;
-					case 167:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 161:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -158:
 						break;
-					case 168:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 162:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -159:
 						break;
-					case 169:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 163:
+						{ return new Symbol(TokenIds.ID,
+                                new Token("ID", yytext(),yyline));}
 					case -160:
 						break;
-					case 170:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 164:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -161:
 						break;
-					case 171:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 165:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -162:
 						break;
-					case 172:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 166:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -163:
 						break;
-					case 173:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 167:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -164:
 						break;
-					case 174:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 168:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -165:
 						break;
-					case 175:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 169:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -166:
 						break;
-					case 176:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 170:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -167:
 						break;
-					case 177:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 171:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -168:
 						break;
-					case 178:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 172:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -169:
 						break;
-					case 179:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 173:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -170:
 						break;
-					case 180:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 174:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -171:
 						break;
-					case 181:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 175:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -172:
 						break;
-					case 182:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 176:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -173:
 						break;
-					case 183:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 177:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -174:
 						break;
-					case 184:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 178:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -175:
 						break;
-					case 185:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 179:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -176:
 						break;
-					case 186:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 180:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -177:
 						break;
-					case 187:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 181:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -178:
 						break;
-					case 188:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 182:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -179:
 						break;
-					case 189:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 183:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -180:
 						break;
-					case 190:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 184:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -181:
 						break;
-					case 191:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 185:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -182:
 						break;
-					case 192:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 186:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -183:
 						break;
-					case 193:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 187:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -184:
 						break;
-					case 194:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 188:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -185:
 						break;
-					case 195:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 189:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -186:
 						break;
-					case 196:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 190:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -187:
 						break;
-					case 197:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 191:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -188:
 						break;
-					case 198:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 192:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -189:
 						break;
-					case 199:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 193:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -190:
 						break;
-					case 200:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 194:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -191:
 						break;
-					case 201:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 195:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -192:
 						break;
-					case 202:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 196:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -193:
 						break;
-					case 203:
-						{ return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+					case 197:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
 					case -194:
+						break;
+					case 198:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -195:
+						break;
+					case 199:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -196:
+						break;
+					case 200:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -197:
+						break;
+					case 201:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -198:
+						break;
+					case 202:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -199:
+						break;
+					case 203:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -200:
+						break;
+					case 204:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -201:
+						break;
+					case 205:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -202:
+						break;
+					case 206:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -203:
+						break;
+					case 207:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -204:
+						break;
+					case 208:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -205:
+						break;
+					case 209:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -206:
+						break;
+					case 210:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -207:
+						break;
+					case 211:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -208:
+						break;
+					case 212:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -209:
+						break;
+					case 213:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -210:
+						break;
+					case 214:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -211:
+						break;
+					case 215:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -212:
+						break;
+					case 216:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -213:
+						break;
+					case 217:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -214:
+						break;
+					case 218:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -215:
+						break;
+					case 219:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -216:
+						break;
+					case 220:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -217:
+						break;
+					case 221:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -218:
+						break;
+					case 222:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -219:
+						break;
+					case 223:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -220:
+						break;
+					case 224:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -221:
+						break;
+					case 225:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -222:
+						break;
+					case 226:
+						{
+    return new Symbol(TokenIds.INT_CONST,
+            new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline));
+}
+					case -223:
 						break;
 					default:
 						yy_error(YY_E_INTERNAL,false);
