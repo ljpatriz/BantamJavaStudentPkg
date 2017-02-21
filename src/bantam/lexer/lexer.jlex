@@ -296,7 +296,7 @@ false    { return new Symbol(TokenIds.BOOLEAN_CONST,
 
 \"[^\"\n]*\n+[^\"\n]*\" {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant spanning multiple lines",yyline));}
 
-\"([^\"]?(\\\")?)*\n {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
+\"([^\"]?(\\\")?)* {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 \"[^\"]*$ {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));}
 
 \"[^\"\\]*(\\[^nrtf\"])+[^\"\\]*\" {return new Symbol(TokenIds.error, new Token("LEX_ERROR","String constant contains illegal escape characters",yyline));}
@@ -351,11 +351,10 @@ extends      { return new Symbol(TokenIds.EXTENDS,
                                                                  ("LEX_ERROR", yytext() + " is too large to be an integer at line " + yyline, yyline)); }
 0*[0-1]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?[0-9]?
                             { return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
+                                new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline)); }
 0*[2]?[01]?[0-4]?[0-7]?[0-4]?[0-8]?[0-3]?[0-6]?[0-4]?[0-7]?
                             { return new Symbol(TokenIds.INT_CONST,
-                                new Token("INT_CONST", yytext(), yyline)); }
-
+                                new Token("INT_CONST", yytext().replaceFirst("^0+(?!$)", ""), yyline)); }
 
 [a-zA-Z][a-zA-Z1-9_]*    { return new Symbol(TokenIds.ID,
                                 new Token("ID", yytext(),yyline));}
