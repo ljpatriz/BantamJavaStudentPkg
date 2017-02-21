@@ -113,10 +113,37 @@ terminal Token ID, INT_CONST, BOOLEAN_CONST, STRING_CONST;
    The type specifies what type of result the non-terminal will return
    The type should correspond to a class name from the AST
 */
+
+/*Given non-terminals*/
 nonterminal Program program;
 nonterminal ClassList class_list;
 nonterminal Class_ class;
 nonterminal MemberList member_list;
+/*End of given non-terminals*/
+
+/*Larry's non-terminals*/
+nonterminal Member member;
+nonterminal Method method;
+nonterminal Field_ field;
+nonterminal Expr_ expr;
+nonterminal FormalList formal_list;
+nonterminal Formal_ formal;
+nonterminal StmtList stmt_list;
+nonterminal Stmt_ stmt;
+
+
+nonterminal ExprStmt_ exprStmt;
+nonterminal DeclStmt_ declStmt;
+nonterminal IfStmt_ ifStmt;
+nonterminal WhileStmt_ whileStmt;
+nonterminal ForStmt_ forStmt;
+nonterminal BreakStmt_ breakStmt;
+nonterminal ReturnStmt_ returnStmt;
+nonterminal BlockStmt_ blockStmt;
+
+/* End of Larry's non-terminal*/
+
+
 /* add other non-terminals... */
 
 /* precedence/associativity rules
@@ -158,11 +185,287 @@ class
 				   parent.getAttribute(), ml); :}
 	;
 
-/* member list (FIXE: only allows empty member lists) */
+/*Larry's Section*/
+/* Non-provided material */
+/* member list */
 member_list
-	::= 
+
+	    ::=
+
         /* empty list */
 	    {: RESULT = new MemberList(getCurrLineNum()); :}
+
+	    /* single member */
+	    | member:m
+	        {: RESULT = (MemberList)(new MemberList(0)).addElement(m); :}
+
+	    /* several members */
+	    | member_list:ml member:m
+	        {: RESULT = (MemberList)ml.addElement(m); :}
 	;
 
-/* add more productions... */
+
+/* member */
+member
+
+        ::=
+        method:m
+            {: RESULT = (Method) m; :}
+
+        |field:f
+            {: RESULT = (Field) f; :}
+    ;
+
+
+method
+
+        ::=
+        ID:returnType ID:name LPAREN formal_list:fl RPAREN LBRACE stmt_list:sl RBRACE
+            {: RESULT = new Method_(returnType.getLineNum(),
+                                    returnType.getAttribute(),
+                                    name.getAttribute(),
+                                    fl, sl); :}
+    ;
+
+field
+
+        ::=
+        ID:type ID:name SEMI
+            {: RESULT = new Field_(type.getLineNum(),
+                                   type.getAttribute(),
+                                   name.getAttribute()); :}
+
+        |ID:type LSQBRACE RSQBRACE ID:name SEMI
+            {: RESULT = new Field_(type.getLineNum(),
+                                   type.getAttribute(),
+                                   name.getAttribute()); :}
+
+        |ID:type ID:name EQ EXPR:e SEMI
+            {: RESULT = new Field_(type.getLineNum(),
+                                   type.getAttribute(),
+                                   name.getAttribute(),
+                                   e); :}
+
+        |ID:type LSQBRACE RSQBRACE ID:name EQ EXPR:e SEMI
+            {: RESULT = new Field_(type.getLineNum(),
+                                   type.getAttribute(),
+                                   name.getAttribute(),
+                                   e); :}
+    ;
+
+formal_list
+
+        ::=
+
+        /* empty list */
+        {: RESULT = new FormalList(getCurrLineNum()); :}
+
+        /* single member */
+        | formal:f
+            {: RESULT = (FormalList)(new FormalList(0)).addElement(f); :}
+
+        /* several members */
+        | formal_list:fl formal:f
+            {: RESULT = (FormalList)fl.addElement(f); :}
+    ;
+
+formal
+
+        ::=
+
+        ID:type ID:name
+            {: RESULT = new Formal_(type.getLineNum(),
+                                    type.getAttribute(),
+                                    name.getAttribute()); :}
+
+        |ID:type LSQBRACE RSQBRACE ID:name
+             {: RESULT = new Formal_(type.getLineNum(),
+                                     type.getAttribute(),
+                                     name.getAttribute()); :}
+     ;
+
+stmt_list
+
+        ::=
+
+        /* empty list */
+        {: RESULT = new StmtList(getCurrLineNum()); :}
+
+        /* single member */
+        | stmt:s
+            {: RESULT = (StmtList)(new StmtList(0)).addElement(s); :}
+
+        /* several members */
+        | stmt_list:sl stmt:s
+            {: RESULT = (StmtList)sl.addElement(s); :}
+    ;
+
+stmt
+
+        ::=
+
+        exprStmt:es
+            {: RESULT = (ExprStmt) es; :}
+
+        |declStmt:ds
+            {: RESULT = (DeclStmt) ds; :}
+
+        |ifStmt:is
+            {: RESULT = (ifStmt) is; :}
+
+        |whileStmt:ws
+            {: RESULT = (WhileStmt) ws; :}
+
+        |forStmt:fs
+            {: RESULT = (ForStmt) fs; :}
+
+        |breakStmt:brs
+            {: RESULT = (BreakStmt) bs; :}
+
+        |returnStmt:rs
+            {: RESULT = (ReturnStmt) rs; :}
+
+        |blockStmt:bls
+            {: RESULT = (DeclStmt) ds; :}
+    ;
+
+exprStmt
+
+        ::=
+
+        expr:e
+            {: RESULT = new ExprStmt_(e.getLineNum()); :}
+    ;
+
+declStmt
+
+        ::=
+
+        ID:type ID:name EQ expr:e
+            {: RESULT = new DeclStmt_(type.getLineNum(),
+                                      type.getAttribute(),
+                                      name.getAttribute(),
+                                      e); :}
+
+        |ID:type LSQBRACE RSQBRACE ID:name EQ expr:e
+            {: RESULT = new DeclStmt_(type.getLineNum(),
+                                      type.getAttribute(),
+                                      name.getAttribute(),
+                                      e); :}
+    ;
+
+ifStmt
+
+        ::=
+
+        IF:if LPAREN expr:predExpr RPAREN stmt:thenStmt
+            {: RESULT = new IfStmt_(if.getLineNum(),
+                                    predExpr,
+                                    thenStmt); :}
+
+        |IF:if LPAREN expr:predExpr RPAREN stmt:thenStmt ELSE stmt:elseStmt
+            {: RESULT = new IfStmt_(if.getLineNum(),
+                                    predExpr,
+                                    thenStmt,
+                                    elseStmt); :}
+    ;
+
+whileStmt
+
+        ::=
+        WHILE.w LPAREN expr:predExpr RPAREN stmt:bodyStmt
+            {: RESULT = new WhileStmt_(w.getLineNum(),
+                                       predExpr,
+                                       boydStmt); :}
+   ;
+
+forStmt
+
+        ::=
+
+        FOR:f LPAREN SEMI SEMI RPAREN stmt:bodyStmt
+            {: RESULT = new ForStmt_(f.getLineNum(),
+                                     null,
+                                     null,
+                                     null,
+                                     bodyStmt); :}
+
+        |FOR:f LPAREN expr:initExpr SEMI SEMI RPAREN stmt:bodyStmt
+            {: RESULT = new ForStmt_(f.getLineNum(),
+                                     initExpr,
+                                     null,
+                                     null,
+                                     bodyStmt); :}
+
+        |FOR:f LPAREN SEMI expr:predExpr SEMI RPAREN stmt:bodyStmt
+            {: RESULT = new ForStmt_(f.getLineNum(),
+                                     null,
+                                     predExpr,
+                                     null,
+                                     bodyStmt); :}
+
+        |FOR:f LPAREN SEMI SEMI expr:updateExpr RPAREN stmt:bodyStmt
+            {: RESULT = new ForStmt_(f.getLineNum(),
+                                     null,
+                                     null,
+                                     updateExpr,
+                                     bodyStmt); :}
+
+        |FOR:f LPAREN expr:initExpr SEMI expr:predExpr SEMI RPAREN stmt:bodyStmt
+            {: RESULT = new ForStmt_(f.getLineNum(),
+                                     initExpr,
+                                     predExpr,
+                                     null,
+                                     bodyStmt); :}
+
+        |FOR:f LPAREN expr:initExpr SEMI SEMI expr:updateExpr RPAREN stmt:bodyStmt
+            {: RESULT = new ForStmt_(f.getLineNum(),
+                                     initExpr,
+                                     null,
+                                     updateExpr,
+                                     bodyStmt); :}
+
+        |FOR:f LPAREN SEMI expr:predExpr SEMI expr:updateExpr RPAREN stmt:bodyStmt
+            {: RESULT = new ForStmt_(f.getLineNum(),
+                                     null,
+                                     predExpr,
+                                     updateExpr,
+                                     bodyStmt); :}
+
+        |FOR:f LPAREN expr:initExpr SEMI expr:predExpr SEMI expr:updateExpr RPAREN stmt:bodyStmt
+            {: RESULT = new ForStmt_(f.getLineNum(),
+                                     initExpr,
+                                     predExpr,
+                                     updateExpr,
+                                     bodyStmt); :}
+    ;
+
+breakStmt
+
+        ::=
+
+        BREAK:b SEMI
+            {: RESULT = new BreakStmt_(b.getLineNum()); :}
+    ;
+
+returnStmt
+
+        ::=
+
+        RETURN:r SEMI
+            {: RESULT = new ReturnStmt_(r.getLineNum()); :}
+
+        |RETURN:r expr:expr
+            {: RESULT = new ReturnStmt_(r.getLineNum(),
+                                        expr); :}
+    ;
+
+blockStmt
+
+        ::=
+
+        LBRACE:lb stmt_list:sl RBRACE
+            {: RESULT = new BlockStmt_(lb.getLineNum(),
+                                       sl); :}
+   ;
+
