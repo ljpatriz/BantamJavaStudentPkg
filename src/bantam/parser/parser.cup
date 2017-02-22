@@ -258,13 +258,13 @@ field
                                    type.getAttribute(),
                                    name.getAttribute()); :}
 
-        |ID:type ID:name EQ EXPR:e SEMI
+        |ID:type ID:name ASSIGN EXPR:e SEMI
             {: RESULT = new Field_(type.getLineNum(),
                                    type.getAttribute(),
                                    name.getAttribute(),
                                    e); :}
 
-        |ID:type LSQBRACE RSQBRACE ID:name EQ EXPR:e SEMI
+        |ID:type LSQBRACE RSQBRACE ID:name ASSIGN EXPR:e SEMI
             {: RESULT = new Field_(type.getLineNum(),
                                    type.getAttribute(),
                                    name.getAttribute(),
@@ -360,13 +360,13 @@ declStmt
 
         ::=
 
-        ID:type ID:name EQ expr:e
+        ID:type ID:name ASSIGN expr:e
             {: RESULT = new DeclStmt_(type.getLineNum(),
                                       type.getAttribute(),
                                       name.getAttribute(),
                                       e); :}
 
-        |ID:type LSQBRACE RSQBRACE ID:name EQ expr:e
+        |ID:type LSQBRACE RSQBRACE ID:name ASSIGN expr:e
             {: RESULT = new DeclStmt_(type.getLineNum(),
                                       type.getAttribute(),
                                       name.getAttribute(),
@@ -544,12 +544,23 @@ assignExpr
 
         ::=
 
-        varExpr:ve EQ expr:e
+        varExpr:ve ASSIGN expr:e
             {: RESULT = new AssignExpr_(ve.getLineNum(),
                                         ve.getRef(),
                                         ve.getName(),
                                         e); :}
     ;
+
+arrayassignExpr
+
+        ::=
+
+        arrayExpr:ae ASSIGN expr:e
+            {: RESULT = new ArrayAssignExpr_(ae.getLineNum(),
+                                             ae.getRef(),
+                                             ae.getName(),
+                                             ae,
+                                             e); :}
 
 dispatchExpr
 
@@ -693,11 +704,11 @@ binarycompExpr
 
         ::=
 
-        expr:leftExpr EQ EQ expr:rightExpr
+        expr:leftExpr EQ expr:rightExpr
             {: RESULT = new BinaryCompEqExpr_(leftExpr.getLineNum(),
                                               leftExpr,
                                               rightExpr); :}
-        |expr:leftExpr NE EQ expr:rightExpr
+        |expr:leftExpr NE expr:rightExpr
             {: RESULT = new BinaryCompNeExpr_(leftExpr.getLineNum(),
                                               leftExpr,
                                               rightExpr); :}
@@ -706,8 +717,8 @@ binarycompExpr
             {: RESULT = new BinaryCompLtExpr_(leftExpr.getLineNum(),
                                               leftExpr,
                                               rightExpr); :}
-        |expr:leftExpr LT EQ expr:rightExpr
-            {: RESULT = new BinaryCompleqExpr_(leftExpr.getLineNum(),
+        |expr:leftExpr LEQ expr:rightExpr
+            {: RESULT = new BinaryCompLeqExpr_(leftExpr.getLineNum(),
                                               leftExpr,
                                               rightExpr); :}
 
@@ -716,22 +727,23 @@ binarycompExpr
                                               leftExpr,
                                               rightExpr); :}
 
-        |expr:leftExpr GT EQ expr:rightExpr
-            {: RESULT = new BinaryCompEqExpr_(leftExpr.getLineNum(),
+        |expr:leftExpr GEQ expr:rightExpr
+            {: RESULT = new BinaryCompGeqExpr_(leftExpr.getLineNum(),
                                               leftExpr,
                                               rightExpr); :}
     ;
+
 
 binarylogicExpr
 
         ::=
 
-        expr:leftExpr AND AND expr:rightExpr
+        expr:leftExpr AND expr:rightExpr
             {: RESULT = new BinaryLogicAndExpr_(leftExpr.getLineNum(),
                                                 leftExpr,
                                                 rightExpr); :}
 
-        |expr:leftExpr OR OR expr:rightExpr
+        |expr:leftExpr OR expr:rightExpr
             {: RESULT = new BinaryLogicOrExpr_(leftExpr.getLineNum(),
                                                 leftExpr,
                                                 rightExpr); :}
@@ -760,14 +772,64 @@ unaryincrExpr
 
         ::=
 
-        PLUS:p PLUS expr:e
-            {: RESULT = new UnaryIncrExpr_(p.getLineNum(),
+        INCR:i expr:e
+            {: RESULT = new UnaryIncrExpr_(i.getLineNum(),
                                            e,
                                            true); :}
 
-        |expr:e PLUS PLUS
+        |expr:e INCR
             {: RESULT = new UnaryIncrExpr_(e.getLineNum(),
                                            e,
                                            false); :}
     ;
+
+unarydecrExpr
+
+        ::=
+
+        DECR:d expr:e
+            {: RESULT = new UnaryDecrExpr_(d.getLineNum(),
+                                           e,
+                                           true); :}
+
+        |expr:e DECR
+            {: RESULT = new UnaryDecrExpr_(e.getLineNum(),
+                                           e,
+                                           false); :}
+    ;
+
+
+varExpr
+
+        ::=
+
+        ID:e
+            {: RESULT = new VarExpr_(e.getLineNum(),
+                                     'this',
+                                     e.getName()); :}
+
+        |LSQBRACE:lb ID:ref RSQBRACE ID:e
+            {: RESULT = new VarExpr_(lb.getLineNum(),
+                                     ref,
+                                     e.getName()); :}
+    ;
+
+
+arrayExpr
+
+        ::=
+
+        ID:e LSQBRACE expr:index RSQBRACE
+            {: RESULT = new ArrayExpr_(e.getLineNum(),
+                                       'this',
+                                       e.getName()); :}
+
+        |LSQBRACE:lb ID:ref RSQBRACE ID:e LSQBRACE expr:index RSQBRACE
+            {: RESULT = new ArrayExpr_(lb.getLineNum(),
+                                       ref,
+                                       e.getName(),
+                                       index); :}
+    ;
+
+
 
