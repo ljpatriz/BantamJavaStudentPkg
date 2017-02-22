@@ -276,4 +276,13 @@ public class LexerTest
         this.testTokenName("0000000510650012308700043", "LEX_ERROR");
     }
 
+
+    @Test
+    public void heurgh() throws IOException {
+        this.testTokenName("\" \\h \"", "LEX_ERROR");
+        this.testTokenName("\" \\\\h \\x \"", "STRING_CONST");
+        this.testTokenName("\" \\\\\\h \\x \"", "LEX_ERROR");
+        this.testTokenName("\" \\h \\x \"", "LEX_ERROR");
+    }
+
 }

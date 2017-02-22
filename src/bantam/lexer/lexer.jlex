@@ -242,7 +242,7 @@ import java_cup.runtime.Symbol;
 /\*[^(\*/)]*
 {
     return new Symbol(TokenIds.error, new Token(
-            "LEX_ERROR","unterminated multiline comment", yyline));}
+            "LEX_ERROR","unterminated multiline comment", yyline));
 }
 
 \"[^\"\n]*\n+[^\"\n]*\"
@@ -263,7 +263,7 @@ import java_cup.runtime.Symbol;
             TokenIds.error, new Token("LEX_ERROR","String constant unterminated",yyline));
 }
 
-\"[^\"\\]*(\\[^nrtf\"])+[^\"\\]*\"
+\"[^\"\\]*(\\\\)*(\\[^nrtf\"\\])+[^\"]*\"
 {
     return new Symbol(TokenIds.error, new Token(
             "LEX_ERROR","String constant contains illegal escape characters",yyline));
