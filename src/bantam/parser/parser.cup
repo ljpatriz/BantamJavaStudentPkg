@@ -126,6 +126,7 @@ nonterminal Member              member;
 nonterminal Method              method;
 nonterminal Field               field;
 nonterminal Expr                expr;
+nonterminal ExprList            expr_list;
 nonterminal FormalList          formal_list;
 nonterminal Formal_             formal;
 nonterminal StmtList            stmt_list;
@@ -141,10 +142,12 @@ nonterminal ReturnStmt_         returnStmt;
 nonterminal BlockStmt_          blockStmt;
 
 nonterminal AssignExpr_         assignExpr;
+nonterminal CastExpr_           castExpr;
+nonterminal ArrayAssignExpr_    arrayassignExpr;
+nonterminal ArrayExpr_          arrayExpr;
 nonterminal DispatchExpr_       dispatchExpr;
 nonterminal NewExpr_            newExpr;
 nonterminal InstanceofExpr_     instanceofExpr;
-nonterminal CastExpr_           caseExpr;
 nonterminal BinaryExpr_         binaryExpr;
 nonterminal UnaryExpr_          unaryExpr;
 nonterminal ConstExpr_          constExpr;
@@ -172,6 +175,17 @@ nonterminal UnaryDecrExpr_      unarydecrExpr;
    associativity specfied by middle operand (left, right, none)
 */
 /* add precedence rules... */
+
+precedence right ASSIGN;
+precedence left OR;
+precedence left AND;
+precedence left EQ, NE;
+precedence left LT, LEQ, GT, GEQ, INSTANCEOF;
+precedence left PLUS, MINUS;
+precedence left TIMES, DIVIDE, MODULUS;
+precedence left NEW;
+precedence left NOT;
+precedence left DOT, INCR, DECR;
 
 /* program, which is simply a list of classes */
 program	
@@ -258,13 +272,13 @@ field
                                    type.getAttribute(),
                                    name.getAttribute()); :}
 
-        |ID:type ID:name ASSIGN EXPR:e SEMI
+        |ID:type ID:name ASSIGN expr:e SEMI
             {: RESULT = new Field_(type.getLineNum(),
                                    type.getAttribute(),
                                    name.getAttribute(),
                                    e); :}
 
-        |ID:type LSQBRACE RSQBRACE ID:name ASSIGN EXPR:e SEMI
+        |ID:type LSQBRACE RSQBRACE ID:name ASSIGN expr:e SEMI
             {: RESULT = new Field_(type.getLineNum(),
                                    type.getAttribute(),
                                    name.getAttribute(),
@@ -283,7 +297,7 @@ formal_list
             {: RESULT = (FormalList)(new FormalList(0)).addElement(f); :}
 
         /* several members */
-        | formal_list:fl formal:f
+        | formal_list:fl COMMA formal:f
             {: RESULT = (FormalList)fl.addElement(f); :}
     ;
 
@@ -314,7 +328,7 @@ stmt_list
             {: RESULT = (StmtList)(new StmtList(0)).addElement(s); :}
 
         /* several lists */
-        | stmt_list:sl stmt:s
+        | stmt_list:sl COMMA stmt:s
             {: RESULT = (StmtList)sl.addElement(s); :}
     ;
 
@@ -392,7 +406,7 @@ ifStmt
 whileStmt
 
         ::=
-        WHILE.w LPAREN expr:predExpr RPAREN stmt:bodyStmt
+        WHILE:w LPAREN expr:predExpr RPAREN stmt:bodyStmt
             {: RESULT = new WhileStmt_(w.getLineNum(),
                                        predExpr,
                                        boydStmt); :}
@@ -500,7 +514,7 @@ expr_list
                 {: RESULT = (ExprList)(new ExprList(0)).addElement(e); :}
 
             /* several exprs */
-            | expr_list:el expr:e
+            | expr_list:el COMMA expr:e
                 {: RESULT = (ExprList)el.addElement(e); :}
     ;
 
@@ -561,6 +575,7 @@ arrayassignExpr
                                              ae.getName(),
                                              ae,
                                              e); :}
+    ;
 
 dispatchExpr
 
@@ -592,7 +607,7 @@ newExpr
                                      type.getAttribute()); :}
     ;
 
-instaneofExpr
+instanceofExpr
 
         ::=
 
@@ -762,7 +777,7 @@ unarynotExpr
 
         ::=
 
-        NE:n expr:e
+        NOT:n expr:e
             {: RESULT = new UnaryNegExpr_(n.getLineNum(),
                                           e); :}
     ;
