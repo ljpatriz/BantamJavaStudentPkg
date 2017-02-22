@@ -122,24 +122,42 @@ nonterminal MemberList member_list;
 /*End of given non-terminals*/
 
 /*Larry's non-terminals*/
-nonterminal Member member;
-nonterminal Method method;
-nonterminal Field_ field;
-nonterminal Expr_ expr;
-nonterminal FormalList formal_list;
-nonterminal Formal_ formal;
-nonterminal StmtList stmt_list;
-nonterminal Stmt_ stmt;
+nonterminal Member              member;
+nonterminal Method              method;
+nonterminal Field               field;
+nonterminal Expr                expr;
+nonterminal FormalList          formal_list;
+nonterminal Formal_             formal;
+nonterminal StmtList            stmt_list;
+nonterminal Stmt_               stmt;
 
+nonterminal ExprStmt_           exprStmt;
+nonterminal DeclStmt_           declStmt;
+nonterminal IfStmt_             ifStmt;
+nonterminal WhileStmt_          whileStmt;
+nonterminal ForStmt_            forStmt;
+nonterminal BreakStmt_          breakStmt;
+nonterminal ReturnStmt_         returnStmt;
+nonterminal BlockStmt_          blockStmt;
 
-nonterminal ExprStmt_ exprStmt;
-nonterminal DeclStmt_ declStmt;
-nonterminal IfStmt_ ifStmt;
-nonterminal WhileStmt_ whileStmt;
-nonterminal ForStmt_ forStmt;
-nonterminal BreakStmt_ breakStmt;
-nonterminal ReturnStmt_ returnStmt;
-nonterminal BlockStmt_ blockStmt;
+nonterminal AssignExpr_         assignExpr;
+nonterminal DispatchExpr_       dispatchExpr;
+nonterminal NewExpr_            newExpr;
+nonterminal InstanceofExpr_     instanceofExpr;
+nonterminal CastExpr_           caseExpr;
+nonterminal BinaryExpr_         binaryExpr;
+nonterminal UnaryExpr_          unaryExpr;
+nonterminal ConstExpr_          constExpr;
+nonterminal VarExpr_            varExpr;
+
+nonterminal BinaryArithExpr_    binaryarithExpr;
+nonterminal BinaryCompExpr_     binarycompExpr;
+nonterminal BinaryLogicExpr_    binarylogicExpr;
+
+nonterminal UnaryNegExpr_       unarynegExpr;
+nonterminal UnaryNotExpr_       unarynotExpr;
+nonterminal UnaryIncrExpr_      unaryincrExpr;
+nonterminal UnaryDecrExpr_      unarydecrExpr;
 
 /* End of Larry's non-terminal*/
 
@@ -291,11 +309,11 @@ stmt_list
         /* empty list */
         {: RESULT = new StmtList(getCurrLineNum()); :}
 
-        /* single member */
+        /* single list */
         | stmt:s
             {: RESULT = (StmtList)(new StmtList(0)).addElement(s); :}
 
-        /* several members */
+        /* several lists */
         | stmt_list:sl stmt:s
             {: RESULT = (StmtList)sl.addElement(s); :}
     ;
@@ -334,7 +352,8 @@ exprStmt
         ::=
 
         expr:e
-            {: RESULT = new ExprStmt_(e.getLineNum()); :}
+            {: RESULT = new ExprStmt_(e.getLineNum(),
+                                      e); :}
     ;
 
 declStmt
@@ -468,4 +487,287 @@ blockStmt
             {: RESULT = new BlockStmt_(lb.getLineNum(),
                                        sl); :}
    ;
+
+expr_list
+
+         ::=
+
+            /* empty list */
+            {: RESULT = new ExprList(getCurrLineNum()); :}
+
+            /* single expr */
+            | expr:e
+                {: RESULT = (ExprList)(new ExprList(0)).addElement(e); :}
+
+            /* several exprs */
+            | expr_list:el expr:e
+                {: RESULT = (ExprList)el.addElement(e); :}
+    ;
+
+expr
+
+        ::=
+
+        assignExpr:e
+            {: RESULT = (AssignExpr) e; :}
+
+        |dispatchExpr:e
+            {: RESULT = (DistpatchExpr) e; :}
+
+        |newExpr:e
+            {: RESULT = (NewExpr) e; :}
+
+        |instanceofExpr:e
+            {: RESULT = (InstanceofExpr) e; :}
+
+        |castExpr:e
+            {: RESULT = (CastExpr) e; :}
+
+        |binaryExpr:e
+            {: RESULT = (BinaryExpr) e; :}
+
+        |unaryExpr:e
+            {: RESULT = (UnaryExpr) e; :}
+
+        |constExpr:e
+            {: RESULT = (ConstExpr) e; :}
+
+        |varExpr:e
+            {: RESULT = (VarExpr) e; :}
+
+        |LPAREN:lp expr:e
+            {: RESULT = (Expr) e; :}
+
+    ;
+
+assignExpr
+
+        ::=
+
+        varExpr:ve EQ expr:e
+            {: RESULT = new AssignExpr_(ve.getLineNum(),
+                                        ve.getRef(),
+                                        ve.getName(),
+                                        e); :}
+    ;
+
+dispatchExpr
+
+        ::=
+
+        ID:methodName LPAREN expr_list:el RPAREN
+            {: RESULT = new DispatchExpr_(methodName.getLineNum(),
+                                          null,
+                                          methodName.getAttribute(),
+                                          el); :}
+
+        |expr:e DOT ID:methodName LPAREN expr_list:el RPAREN
+            {: RESULT = new DispatchExpr_(e.getLineNum(),
+                                          e,
+                                          methodName.getAttribute(),
+                                          el); :}
+    ;
+
+newExpr
+
+        ::=
+
+        NEW:n ID:type LPAREN RPAREN
+            {: RESULT = new NewExpr_(n.getLineNum(),
+                                     type.getAttribute()); :}
+
+        |NEW:n ID:type LSQBRACE expr:e RSQBRACE
+            {: RESULT = new NewExpr_(n.getLineNum(),
+                                     type.getAttribute()); :}
+    ;
+
+instaneofExpr
+
+        ::=
+
+        expr:e INSTANCEOF ID:type
+            {: RESULT = new InstanceofExpr_(e.getLineNum(),
+                                            e,
+                                            type.getAttribute()); :}
+
+        |expr:e INSTANCEOF ID:type LSQBRACE RSQBRACE
+            {: RESULT = new InstanceofExpr_(e.getLineNum(),
+                                            e,
+                                            type.getAttribute()); :}
+    ;
+
+castExpr
+
+        ::=
+
+        LPAREN:lp ID:type RPAREN LPAREN expr:e RPAREN
+            {: RESULT = new CastExpr_(lp.getLineNum(),
+                                      type.getAttribute(),
+                                      e); :}
+
+        |LPAREN:lp ID:type LSQBRACE RSQBRACE RPAREN LPAREN expr:e RPAREN
+            {: RESULT = new CastExpr_(lp.getLineNum(),
+                                      type.getAttribute(),
+                                      e); :}
+    ;
+
+binaryExpr
+
+        ::=
+
+        binaryarithExpr:e
+            {: RESULT = (BinaryArithExpr) e; :}
+
+        |binarycompExpr:e
+            {: RESULT = (BinaryCompExpr) e; :}
+
+        |binarylogicExpr:e
+            {: RESULT = (BinaryLogicExpr) e; :}
+    ;
+
+unaryExpr
+
+        ::=
+
+        unarynegExpr:e
+            {: RESULT = (UnaryNegExpr) e; :}
+
+        |unarynotExpr:e
+            {: RESULT = (UnaryNotExpr) e; :}
+
+        |unaryincrExpr:e
+            {: RESULT = (UnaryIncrExpr) e; :}
+
+        |unarydecrExpr:e
+            {: RESULT = (UnaryDecrExpr) e; :}
+    ;
+
+constExpr
+
+        ::=
+
+        INT_CONST:i
+            {: RESULT = new ConstExpr_(i.getLineNum(),
+                                       i.getAttribute()); :}
+
+        |BOOLEAN_CONST:b
+            {: RESULT = new ConstExpr_(b.getLineNum(),
+                                       b.getAttribute()); :}
+
+        |STRING_CONST:s
+            {: RESULT = new ConstExpr_(s.getLineNum(),
+                                       s.getAttribute()); :}
+    ;
+
+binaryarithExpr
+
+        ::=
+
+        expr:leftExpr PLUS expr:rightExpr
+            {: RESULT = new BinaryArithPlusExpr_(leftExpr.getLineNum(),
+                                                leftExpr,
+                                                rightExpr); :}
+
+        |expr:leftExpr MINUS expr:rightExpr
+            {: RESULT = new BinaryArithMinusExpr_(leftExpr.getLineNum(),
+                                                leftExpr,
+                                                rightExpr); :}
+
+        |expr:leftExpr TIMES expr:rightExpr
+            {: RESULT = new BinaryArithTimesExpr_(leftExpr.getLineNum(),
+                                                leftExpr,
+                                                rightExpr); :}
+
+        |expr:leftExpr DIVIDE expr:rightExpr
+            {: RESULT = new BinaryArithDivideExpr_(leftExpr.getLineNum(),
+                                                leftExpr,
+                                                rightExpr); :}
+
+        |expr:leftExpr MODULUS expr:rightExpr
+            {: RESULT = new BinaryArithModulusExpr_(leftExpr.getLineNum(),
+                                                leftExpr,
+                                                rightExpr); :}
+    ;
+
+binarycompExpr
+
+        ::=
+
+        expr:leftExpr EQ EQ expr:rightExpr
+            {: RESULT = new BinaryCompEqExpr_(leftExpr.getLineNum(),
+                                              leftExpr,
+                                              rightExpr); :}
+        |expr:leftExpr NE EQ expr:rightExpr
+            {: RESULT = new BinaryCompNeExpr_(leftExpr.getLineNum(),
+                                              leftExpr,
+                                              rightExpr); :}
+
+        |expr:leftExpr LT expr:rightExpr
+            {: RESULT = new BinaryCompLtExpr_(leftExpr.getLineNum(),
+                                              leftExpr,
+                                              rightExpr); :}
+        |expr:leftExpr LT EQ expr:rightExpr
+            {: RESULT = new BinaryCompleqExpr_(leftExpr.getLineNum(),
+                                              leftExpr,
+                                              rightExpr); :}
+
+        |expr:leftExpr GT expr:rightExpr
+            {: RESULT = new BinaryCompGtExpr_(leftExpr.getLineNum(),
+                                              leftExpr,
+                                              rightExpr); :}
+
+        |expr:leftExpr GT EQ expr:rightExpr
+            {: RESULT = new BinaryCompEqExpr_(leftExpr.getLineNum(),
+                                              leftExpr,
+                                              rightExpr); :}
+    ;
+
+binarylogicExpr
+
+        ::=
+
+        expr:leftExpr AND AND expr:rightExpr
+            {: RESULT = new BinaryLogicAndExpr_(leftExpr.getLineNum(),
+                                                leftExpr,
+                                                rightExpr); :}
+
+        |expr:leftExpr OR OR expr:rightExpr
+            {: RESULT = new BinaryLogicOrExpr_(leftExpr.getLineNum(),
+                                                leftExpr,
+                                                rightExpr); :}
+    ;
+
+unarynegExpr
+
+        ::=
+
+        MINUS:m expr:e
+            {: RESULT = new UnaryNegExpr_(m.getLineNum(),
+                                          e); :}
+    ;
+
+unarynotExpr
+
+        ::=
+
+        NE:n expr:e
+            {: RESULT = new UnaryNegExpr_(n.getLineNum(),
+                                          e); :}
+    ;
+
+
+unaryincrExpr
+
+        ::=
+
+        PLUS:p PLUS expr:e
+            {: RESULT = new UnaryIncrExpr_(p.getLineNum(),
+                                           e,
+                                           true); :}
+
+        |expr:e PLUS PLUS
+            {: RESULT = new UnaryIncrExpr_(e.getLineNum(),
+                                           e,
+                                           false); :}
+    ;
 
