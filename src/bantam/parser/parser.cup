@@ -166,7 +166,7 @@ nonterminal UnaryDecrExpr_      unarydecrExpr;
 
 /* precedence/associativity rules
    format: precedence <associativity> <list of terminals>
-   example: precedence right ASSIGN
+   example: precedence right ASSIGn
    precedence specified by order (from lowest to highest)
    note: use a single precedence rule for terminals with same precedence
    associativity specfied by middle operand (left, right, none)
